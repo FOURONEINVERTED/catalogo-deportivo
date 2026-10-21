@@ -42,3 +42,55 @@
         font-size: 14px;
     }
 }
+
+/* CUADRÍCULA DE PRODUCTOS */
+
+.productos-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 24px;
+    margin-top: 30px;
+}
+
+/* TARJETAS DE PRODUCTOS */
+
+.producto-card {
+    background-color: #ffffff;
+    border: 1px solid #e5e7eb;
+    border-radius: 12px;
+    padding: 24px;
+}
+
+.producto-card h2 {
+    font-size: 19px;
+    line-height: 1.3;
+    margin: 0 0 12px;
+}
+
+.producto-marca {
+    font-size: 14px;
+    margin: 0 0 12px;
+}
+
+.producto-precio {
+    font-size: 20px;
+    font-weight: 700;
+    color: #182230;
+    margin: 0;
+}
+
+/* ADAPTACIÓN A TABLETS */
+
+@media (max-width: 900px) {
+    .productos-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+/* ADAPTACIÓN A MÓVILES */
+
+@media (max-width: 600px) {
+    .productos-grid {
+        grid-template-columns: 1fr;
+    }
+}
