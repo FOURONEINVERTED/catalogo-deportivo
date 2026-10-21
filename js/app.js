@@ -2,5 +2,7 @@
 /* INICIO DEL CATÁLOGO DEPORTIVO */
 
 document.addEventListener("DOMContentLoaded", () => {
-    console.log("Catálogo Deportivo: JavaScript funcionando correctamente");
+    mostrarVista();
+
+    console.log("Catálogo Deportivo: navegación funcionando correctamente");
 });

@@ -1,5 +1,5 @@
 
-/* MENÚ PRINCIPAL DEL CATÁLOGO */
+/* MENÚ PRINCIPAL */
 
 .main-nav {
     display: flex;
@@ -8,18 +8,29 @@
     flex-wrap: wrap;
 }
 
-.main-nav span {
+.main-nav a {
     color: #d1d5db;
     font-size: 15px;
     font-weight: 500;
+    text-decoration: none;
 }
 
-.main-nav .nav-current {
+.main-nav a:hover,
+.main-nav a.nav-current {
     color: #c7fa5e;
+}
+
+.main-nav a.nav-current {
     font-weight: 700;
 }
 
-/* MENÚ EN PANTALLAS PEQUEÑAS */
+/* OCULTAR VISTAS INACTIVAS */
+
+[hidden] {
+    display: none !important;
+}
+
+/* ADAPTACIÓN A MÓVILES */
 
 @media (max-width: 600px) {
     .main-nav {
@@ -27,7 +38,7 @@
         gap: 20px;
     }
 
-    .main-nav span {
+    .main-nav a {
         font-size: 14px;
     }
 }

@@ -20,11 +20,11 @@
                 CATÁLOGO <span>DEPORTIVO</span>
             </div>
 
-            <!-- MENÚ DE NAVEGACIÓN -->
+            <!-- NAVEGACIÓN -->
             <nav class="main-nav" aria-label="Navegación principal">
-                <span class="nav-current">Inicio</span>
-                <span>Productos</span>
-                <span>Categorías</span>
+                <a href="#/inicio">Inicio</a>
+                <a href="#/productos">Productos</a>
+                <a href="#/categorias">Categorías</a>
             </nav>
 
         </div>
@@ -32,12 +32,32 @@
 
     <!-- CONTENIDO PRINCIPAL -->
     <main class="main-content">
-        <h1>Bienvenido a nuestro catálogo deportivo</h1>
 
-        <p>
-            Próximamente encontrarás nuestros productos deportivos aquí.
-        </p>
+        <section id="vista-inicio">
+            <h1>Bienvenido a nuestro catálogo deportivo</h1>
+            <p>
+                Próximamente encontrarás nuestros productos deportivos aquí.
+            </p>
+        </section>
+
+        <section id="vista-productos" hidden>
+            <h1>Productos</h1>
+            <p>Aquí mostraremos todos nuestros artículos deportivos.</p>
+        </section>
+
+        <section id="vista-categorias" hidden>
+            <h1>Categorías</h1>
+            <p>
+                Próximamente podrás explorar zapatillas, gorras,
+                ropa deportiva y accesorios.
+            </p>
+        </section>
+
     </main>
-<script src="js/app.js"></script>
+
+    <!-- JAVASCRIPT -->
+    <script src="js/router.js"></script>
+    <script src="js/app.js"></script>
+
 </body>
 </html>
