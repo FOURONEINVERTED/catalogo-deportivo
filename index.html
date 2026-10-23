@@ -40,12 +40,33 @@
             </p>
         </section>
 
-       <section id="vista-productos" hidden>
+      
+<!-- VISTA DEL CATÁLOGO DE PRODUCTOS -->
+<section id="vista-productos" hidden>
+
     <h1>Productos</h1>
+
     <p>Explora nuestro catálogo de artículos deportivos.</p>
 
+    <!-- BUSCADOR -->
+    <div class="buscador-contenedor">
+        <label for="buscador-productos">
+            Buscar productos
+        </label>
+
+        <input
+            type="search"
+            id="buscador-productos"
+            placeholder="Buscar por nombre o marca..."
+            autocomplete="off"
+        >
+    </div>
+
+    <!-- LISTA DE PRODUCTOS -->
     <div id="lista-productos" class="productos-grid"></div>
+
 </section>
+
 
         
 <section id="vista-categorias" hidden>
@@ -90,6 +111,7 @@
    <script src="js/products.js"></script>
 <script src="js/router.js"></script>
 <script src="js/catalog.js"></script>
+<script src="js/filters.js"></script>
 <script src="js/app.js"></script>
 </body>
 </html>

@@ -4,7 +4,8 @@
 document.addEventListener("DOMContentLoaded", () => {
     mostrarProductos();
     mostrarCategorias();
+    iniciarBuscador();
     mostrarVista();
 
-    console.log("Catálogo Deportivo: productos y categorías cargados correctamente");
+    console.log("Catálogo Deportivo: iniciado correctamente");
 });
