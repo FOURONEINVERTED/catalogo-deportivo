@@ -12,7 +12,7 @@ function mostrarVista() {
 
     let vistaSeleccionada = vistas[ruta] || "vista-inicio";
 
-    // COMPROBAR SI ES UNA CATEGORÍA
+    // NAVEGACIÓN POR CATEGORÍAS
     if (ruta.startsWith("#/categoria/")) {
         const categoria = ruta.split("/")[2];
 
@@ -31,6 +31,14 @@ function mostrarVista() {
 
             mostrarProductosCategoria(categoria);
         }
+    }
+
+    // NAVEGACIÓN AL DETALLE DE UN PRODUCTO
+    if (ruta.startsWith("#/producto/")) {
+        const id = ruta.split("/")[2];
+
+        vistaSeleccionada = "vista-producto-detalle";
+        mostrarDetalleProducto(id);
     }
 
     // MOSTRAR LA VISTA SELECCIONADA

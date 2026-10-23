@@ -179,3 +179,58 @@
     outline: 3px solid #84cc16;
     outline-offset: 3px;
 }
+
+/* DETALLE DEL PRODUCTO */
+
+#detalle-producto {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+    gap: 40px;
+    align-items: start;
+    margin-top: 30px;
+}
+
+/* FOTOGRAFÍA DEL PRODUCTO */
+
+.detalle-imagen {
+    display: block;
+    width: 100%;
+    max-width: 500px;
+    height: auto;
+    max-height: 500px;
+    object-fit: contain;
+    background-color: #ffffff;
+    border-radius: 12px;
+}
+
+/* INFORMACIÓN DEL PRODUCTO */
+
+.detalle-informacion {
+    background-color: #ffffff;
+    padding: 30px;
+    border-radius: 12px;
+}
+
+.detalle-precio {
+    font-size: 28px;
+    font-weight: 700;
+    color: #182230;
+}
+
+/* ADAPTACIÓN A MÓVILES */
+
+@media (max-width: 700px) {
+    #detalle-producto {
+        grid-template-columns: 1fr;
+        gap: 24px;
+    }
+
+    .detalle-imagen {
+        max-width: 100%;
+        max-height: 400px;
+    }
+
+    .detalle-informacion {
+        padding: 20px;
+    }
+}

@@ -158,3 +158,64 @@ function mostrarProductosCategoria(categoria) {
         contenedor.appendChild(tarjeta);
     });
 }
+/* MOSTRAR DETALLE DE UN PRODUCTO */
+
+function mostrarDetalleProducto(id) {
+    const contenedor = document.getElementById("detalle-producto");
+    const titulo = document.getElementById("detalle-nombre");
+
+    if (!contenedor || !titulo) {
+        console.error("No se encontró la vista de detalle.");
+        return;
+    }
+
+    const producto = productos.find((item) => {
+        return item.id === Number(id);
+    });
+
+    contenedor.innerHTML = "";
+
+    if (!producto) {
+        titulo.textContent = "Producto no encontrado";
+
+        const mensaje = document.createElement("p");
+        mensaje.textContent = "El producto solicitado no existe.";
+
+        contenedor.appendChild(mensaje);
+        return;
+    }
+
+    titulo.textContent = producto.name;
+
+    const imagen = document.createElement("img");
+    imagen.src = producto.image;
+    imagen.alt = producto.name;
+    imagen.className = "detalle-imagen";
+
+    const informacion = document.createElement("div");
+    informacion.className = "detalle-informacion";
+
+    const marca = document.createElement("p");
+    marca.textContent = "Marca: " + producto.brand;
+
+    const precio = document.createElement("p");
+    precio.className = "detalle-precio";
+    precio.textContent = producto.price.toLocaleString("es-ES", {
+        style: "currency",
+        currency: "EUR"
+    });
+
+    const descripcion = document.createElement("p");
+    descripcion.textContent = producto.description;
+
+    const tallas = document.createElement("p");
+    tallas.textContent = "Tallas: " + producto.sizes.join(", ");
+
+    const colores = document.createElement("p");
+    colores.textContent = "Colores: " + producto.colors.join(", ");
+
+    informacion.append(marca, precio, descripcion, tallas, colores);
+
+    contenedor.append(imagen, informacion);
+}
+
