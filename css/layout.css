@@ -97,21 +97,29 @@
 
 /* IMÁGENES DE LOS PRODUCTOS */
 
+
+
+/* CONTENEDOR DE FOTOGRAFÍAS */
+
 .producto-imagen {
     width: 100%;
-    aspect-ratio: 4 / 3;
+    height: 320px;
     background-color: #f3f5f8;
     border-radius: 8px;
     overflow: hidden;
     margin-bottom: 20px;
 }
 
+/* FOTOGRAFÍAS DE LOS PRODUCTOS */
+
 .producto-imagen img {
     width: 100%;
     height: 100%;
     display: block;
-    object-fit: cover;
+    object-fit: contain;
+    object-position: center;
 }
+
 
 /* PRODUCTOS SIN FOTOGRAFÍA */
 
