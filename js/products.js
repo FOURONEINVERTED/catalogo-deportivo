@@ -57,7 +57,7 @@ const productos = [
         category: "ropa",
         brand: "Marca Demo",
         price: 39.99,
-        image: "",
+        image: "assets/images/products/pantalon-deportivo.jpg",
         description: "Pantalón deportivo para entrenamientos.",
         sizes: ["S", "M", "L", "XL"],
         colors: ["Negro", "Gris"]
