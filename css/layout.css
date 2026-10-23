@@ -162,3 +162,20 @@
         grid-template-columns: 1fr;
     }
 }
+
+/* ENLACES ACCESIBLES DE CATEGORÍAS */
+
+.categoria-card {
+    display: block;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.categoria-card:hover {
+    border-color: #94a3b8;
+}
+
+.categoria-card:focus-visible {
+    outline: 3px solid #84cc16;
+    outline-offset: 3px;
+}

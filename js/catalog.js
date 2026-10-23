@@ -63,6 +63,9 @@ function obtenerProductosPorCategoria(categoria) {
 
 /* MOSTRAR LAS CATEGORÍAS DEL CATÁLOGO */
 
+
+/* MOSTRAR LAS CATEGORÍAS DEL CATÁLOGO */
+
 function mostrarCategorias() {
     const contenedor = document.getElementById("lista-categorias");
 
@@ -83,11 +86,10 @@ function mostrarCategorias() {
     categorias.forEach((categoria) => {
         const cantidad = obtenerProductosPorCategoria(categoria.id).length;
 
-        const tarjeta = document.createElement("article");
+        const tarjeta = document.createElement("a");
         tarjeta.className = "categoria-card";
-tarjeta.addEventListener("click", () => {
-    window.location.hash = "#/categoria/" + categoria.id;
-});
+        tarjeta.href = "#/categoria/" + categoria.id;
+
         const nombre = document.createElement("h2");
         nombre.textContent = categoria.nombre;
 
@@ -99,6 +101,7 @@ tarjeta.addEventListener("click", () => {
         contenedor.appendChild(tarjeta);
     });
 }
+
 
 /* MOSTRAR PRODUCTOS DE UNA CATEGORÍA */
 
