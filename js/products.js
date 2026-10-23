@@ -68,7 +68,7 @@ const productos = [
         category: "accesorios",
         brand: "Marca Demo",
         price: 49.99,
-        image: "",
+        image: "assets/images/products/mochila-deportiva.jpg",
         description: "Mochila práctica para actividades deportivas.",
         sizes: ["Única"],
         colors: ["Negro", "Azul"]
