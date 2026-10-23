@@ -46,7 +46,7 @@ const productos = [
         category: "ropa",
         brand: "Marca Demo",
         price: 29.99,
-        image: "",
+        image: "assets/images/products/camiseta-deportiva.jpg",
         description: "Camiseta cómoda para entrenar.",
         sizes: ["S", "M", "L", "XL"],
         colors: ["Negro", "Blanco"]
