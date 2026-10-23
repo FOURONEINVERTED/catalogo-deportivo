@@ -52,3 +52,48 @@ function mostrarProductos() {
         contenedor.appendChild(tarjeta);
     });
 }
+
+/* FILTRAR PRODUCTOS POR CATEGORÍA */
+
+function obtenerProductosPorCategoria(categoria) {
+    return productos.filter((producto) => {
+        return producto.category === categoria;
+    });
+}
+
+/* MOSTRAR LAS CATEGORÍAS DEL CATÁLOGO */
+
+function mostrarCategorias() {
+    const contenedor = document.getElementById("lista-categorias");
+
+    if (!contenedor) {
+        console.error("No se encontró el contenedor de categorías.");
+        return;
+    }
+
+    const categorias = [
+        { id: "zapatillas", nombre: "Zapatillas" },
+        { id: "gorras", nombre: "Gorras" },
+        { id: "ropa", nombre: "Ropa deportiva" },
+        { id: "accesorios", nombre: "Accesorios" }
+    ];
+
+    contenedor.innerHTML = "";
+
+    categorias.forEach((categoria) => {
+        const cantidad = obtenerProductosPorCategoria(categoria.id).length;
+
+        const tarjeta = document.createElement("article");
+        tarjeta.className = "categoria-card";
+
+        const nombre = document.createElement("h2");
+        nombre.textContent = categoria.nombre;
+
+        const contador = document.createElement("p");
+        contador.textContent =
+            cantidad + (cantidad === 1 ? " producto" : " productos");
+
+        tarjeta.append(nombre, contador);
+        contenedor.appendChild(tarjeta);
+    });
+}

@@ -3,7 +3,8 @@
 
 document.addEventListener("DOMContentLoaded", () => {
     mostrarProductos();
+    mostrarCategorias();
     mostrarVista();
 
-    console.log("Catálogo Deportivo: productos cargados correctamente");
+    console.log("Catálogo Deportivo: productos y categorías cargados correctamente");
 });
