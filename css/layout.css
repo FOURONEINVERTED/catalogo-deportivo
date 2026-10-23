@@ -301,3 +301,38 @@ a.producto-card:focus-visible {
         max-width: 100%;
     }
 }
+
+/* BOTÓN EXPLORAR PRODUCTOS */
+
+.boton-explorar {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 14px 24px;
+    margin-top: 20px;
+    background-color: #c7fa5e;
+    color: #182230;
+    font-size: 16px;
+    font-weight: 700;
+    text-decoration: none;
+    border-radius: 10px;
+    transition: background-color 0.2s ease;
+}
+
+.boton-explorar:hover {
+    background-color: #a3e635;
+}
+
+.boton-explorar:focus-visible {
+    outline: 3px solid #65a30d;
+    outline-offset: 3px;
+}
+
+/* ADAPTACIÓN A MÓVILES */
+
+@media (max-width: 600px) {
+    .boton-explorar {
+        width: 100%;
+        text-align: center;
+    }
+}
