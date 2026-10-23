@@ -10,14 +10,42 @@ function mostrarVista() {
         "#/categorias": "vista-categorias"
     };
 
-    const vistaSeleccionada = vistas[ruta] || "vista-inicio";
+    let vistaSeleccionada = vistas[ruta] || "vista-inicio";
 
+    // COMPROBAR SI ES UNA CATEGORÍA
+    if (ruta.startsWith("#/categoria/")) {
+        const categoria = ruta.split("/")[2];
+
+        const categorias = {
+            zapatillas: "Zapatillas",
+            gorras: "Gorras",
+            ropa: "Ropa deportiva",
+            accesorios: "Accesorios"
+        };
+
+        if (categorias[categoria]) {
+            vistaSeleccionada = "vista-categoria-detalle";
+
+            const titulo = document.getElementById("titulo-categoria");
+            titulo.textContent = categorias[categoria];
+
+            mostrarProductosCategoria(categoria);
+        }
+    }
+
+    // MOSTRAR LA VISTA SELECCIONADA
     document.querySelectorAll("main section").forEach((seccion) => {
         seccion.hidden = seccion.id !== vistaSeleccionada;
     });
 
+    // ACTUALIZAR EL MENÚ PRINCIPAL
     document.querySelectorAll(".main-nav a").forEach((enlace) => {
-        const activa = vistas[enlace.getAttribute("href")] === vistaSeleccionada;
+        const destino = enlace.getAttribute("href");
+
+        const activa =
+            destino === ruta ||
+            (ruta.startsWith("#/categoria/") &&
+             destino === "#/categorias");
 
         enlace.classList.toggle("nav-current", activa);
 
