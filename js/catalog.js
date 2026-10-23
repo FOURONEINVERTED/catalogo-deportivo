@@ -12,9 +12,9 @@ function mostrarProductos() {
     contenedor.innerHTML = "";
 
     productos.forEach((producto) => {
-        const tarjeta = document.createElement("article");
+        const tarjeta = document.createElement("a");
         tarjeta.className = "producto-card";
-
+        tarjeta.href = "#/producto/" + producto.id;
         // CONTENEDOR DE LA IMAGEN
         const imagenContenedor = document.createElement("div");
         imagenContenedor.className = "producto-imagen";
@@ -118,8 +118,10 @@ function mostrarProductosCategoria(categoria) {
     contenedor.innerHTML = "";
 
     productosFiltrados.forEach((producto) => {
-        const tarjeta = document.createElement("article");
-        tarjeta.className = "producto-card";
+        
+    const tarjeta = document.createElement("a");
+    tarjeta.className = "producto-card";
+    tarjeta.href = "#/producto/" + producto.id;
 
         // IMAGEN DEL PRODUCTO
         const imagenContenedor = document.createElement("div");

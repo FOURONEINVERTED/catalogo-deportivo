@@ -234,3 +234,21 @@
         padding: 20px;
     }
 }
+
+/* TARJETAS DE PRODUCTO PULSABLES */
+
+a.producto-card {
+    display: block;
+    text-decoration: none;
+    color: inherit;
+    cursor: pointer;
+}
+
+a.producto-card:hover {
+    border-color: #94a3b8;
+}
+
+a.producto-card:focus-visible {
+    outline: 3px solid #84cc16;
+    outline-offset: 3px;
+}
