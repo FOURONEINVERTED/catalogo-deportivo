@@ -35,7 +35,7 @@ const productos = [
         category: "gorras",
         brand: "Marca Demo",
         price: 24.99,
-        image: "",
+        image: "assets/images/products/gorra-deportiva.jpg",
         description: "Gorra ligera y transpirable.",
         sizes: ["Única"],
         colors: ["Negro", "Azul"]
