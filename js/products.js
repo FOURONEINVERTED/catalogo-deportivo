@@ -24,7 +24,7 @@ const productos = [
         category: "zapatillas",
         brand: "Marca Demo",
         price: 89.99,
-        image: "assets/images/products/zapatillas-urbanas.jpg",
+        image: "assets/images/products/zapatillas-urbanas.webp",
         description: "Zapatillas cómodas para uso diario.",
         sizes: ["39", "40", "41", "42"],
         colors: ["Blanco", "Gris"]
