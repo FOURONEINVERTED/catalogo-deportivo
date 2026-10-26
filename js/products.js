@@ -46,7 +46,7 @@ const productos = [
         category: "ropa",
         brand: "Marca Demo",
         price: 29.99,
-        image: "assets/images/products/camiseta-deportiva.jpg",
+        image: "assets/images/products/camiseta-deportiva.webp",
         description: "Camiseta cómoda para entrenar.",
         sizes: ["S", "M", "L", "XL"],
         colors: ["Negro", "Blanco"]
@@ -57,7 +57,7 @@ const productos = [
         category: "ropa",
         brand: "Marca Demo",
         price: 39.99,
-        image: "assets/images/products/pantalon-deportivo.jpg",
+        image: "assets/images/products/mochila-deportiva.webp",
         description: "Pantalón deportivo para entrenamientos.",
         sizes: ["S", "M", "L", "XL"],
         colors: ["Negro", "Gris"]
