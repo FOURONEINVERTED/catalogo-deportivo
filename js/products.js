@@ -13,7 +13,7 @@ const productos = [
         category: "zapatillas",
         brand: "Marca Demo",
         price: 79.99,
-        image:"assets/images/products/zapatillas-running.jpg",
+        image: "assets/images/products/zapatillas-running.webp",
         description: "Zapatillas ligeras para correr.",
         sizes: ["40", "41", "42", "43"],
         colors: ["Negro", "Blanco"]
