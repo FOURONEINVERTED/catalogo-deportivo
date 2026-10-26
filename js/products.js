@@ -57,7 +57,7 @@ const productos = [
         category: "ropa",
         brand: "Marca Demo",
         price: 39.99,
-        image: "assets/images/products/mochila-deportiva.webp",
+        image: "assets/images/products/pantalon-deportivo.jpg",
         description: "Pantalón deportivo para entrenamientos.",
         sizes: ["S", "M", "L", "XL"],
         colors: ["Negro", "Gris"]
@@ -68,7 +68,7 @@ const productos = [
         category: "accesorios",
         brand: "Marca Demo",
         price: 49.99,
-        image: "assets/images/products/mochila-deportiva.jpg",
+        image: "assets/images/products/mochila-deportiva.webp",
         description: "Mochila práctica para actividades deportivas.",
         sizes: ["Única"],
         colors: ["Negro", "Azul"]
