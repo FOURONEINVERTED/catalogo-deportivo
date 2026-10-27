@@ -81,7 +81,8 @@ const productos = [
     brand: "Marca Demo",
     price: 19.99,
     image: "assets/images/products/botella-deportiva.webp",
-    description: "Botella deportiva para acompañarte durante tus entrenamientos y actividades físicas.",
+    description: "Botella deportiva para llevar agua durante los entrenamientos, las sesiones de gimnasio y otras actividades físicas.",
+
     sizes: ["Único"],
     colors: [["Negro", "Marrón"]
 ]
