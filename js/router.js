@@ -20,7 +20,8 @@ function mostrarVista() {
             zapatillas: "Zapatillas",
             gorras: "Gorras",
             ropa: "Ropa deportiva",
-            accesorios: "Accesorios"
+            accesorios: "Accesorios",
+            balones: "Balones"
         };
 
         if (categorias[categoria]) {

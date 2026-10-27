@@ -78,7 +78,8 @@ function mostrarCategorias() {
         { id: "zapatillas", nombre: "Zapatillas" },
         { id: "gorras", nombre: "Gorras" },
         { id: "ropa", nombre: "Ropa deportiva" },
-        { id: "accesorios", nombre: "Accesorios" }
+        { id: "accesorios", nombre: "Accesorios" },
+        { id: "balones", nombre: "Balones" }
     ];
 
     contenedor.innerHTML = "";
@@ -116,7 +117,13 @@ function mostrarProductosCategoria(categoria) {
     const productosFiltrados = obtenerProductosPorCategoria(categoria);
 
     contenedor.innerHTML = "";
-
+    
+if (productosFiltrados.length === 0) {
+    const mensaje = document.createElement("p");
+    mensaje.textContent = "Todavía no hay productos en esta categoría.";
+    contenedor.appendChild(mensaje);
+    return;
+}
     productosFiltrados.forEach((producto) => {
         
     const tarjeta = document.createElement("a");
