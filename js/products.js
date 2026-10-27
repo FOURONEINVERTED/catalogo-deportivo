@@ -86,5 +86,17 @@ const productos = [
     sizes: ["Único"],
     colors: [["Negro", "Marrón"]
 ]
+},
+
+{
+    id: 8,
+    name: "Gorra MLB",
+    category: "gorras",
+    brand: "Marca Demo",
+    price: 29.99,
+    image: "assets/images/products/gorra-mlb.webp",
+    description: "Gorra de estilo MLB para complementar un look deportivo y urbano.",
+    sizes: ["Único"],
+    colors: ["Rojo"]
 }
 ];
