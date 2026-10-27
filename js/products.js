@@ -98,5 +98,17 @@ const productos = [
     description: "Gorra de estilo MLB para complementar un look deportivo y urbano.",
     sizes: ["Único"],
     colors: ["Rojo"]
+},
+
+{
+    id: 9,
+    name: "Balón de Baloncesto",
+    category: "balones",
+    brand: "Marca Demo",
+    price: 24.99,
+    image: "assets/images/products/balon-baloncesto.webp",
+    description: "Balón de baloncesto para practicar lanzamientos, entrenamientos y actividades deportivas.",
+    sizes: ["Único"],
+    colors: ["Por definir"]
 }
 ];
