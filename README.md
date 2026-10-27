@@ -37,3 +37,27 @@ Las seis fotografías de los productos se han convertido a formato WebP para red
 ## Alcance del proyecto
 
 Este proyecto es un catálogo demostrativo. No incluye carrito de compra, pagos, registro de usuarios ni base de datos.
+
+
+## Cómo actualizar los productos
+
+Los productos del catálogo están definidos en el archivo `js/products.js`.
+
+Para modificar un producto:
+
+1. Abrir `js/products.js`.
+2. Localizar el producto que queremos actualizar.
+3. Modificar su nombre, marca, precio, descripción o características.
+4. Guardar los cambios.
+5. Comprobar el resultado en el navegador.
+
+Para cambiar una fotografía:
+
+1. Preparar la nueva imagen en formato WebP.
+2. Guardarla en `assets/images/products/`.
+3. Actualizar la propiedad `image` del producto correspondiente en `js/products.js`.
+4. Comprobar que aparece correctamente en la tarjeta y en la ficha del producto.
+
+Para añadir nuevos productos, utilizar un identificador `id` que no esté asignado a otro producto y una categoría existente.
+
+Después de verificar los cambios, guardarlos y publicarlos mediante GitHub Desktop.
