@@ -120,6 +120,10 @@
     object-position: center;
 }
 
+/* Ajustar tamaño visual de Zapatillas Urbanas en el catálogo */
+#vista-productos .producto-imagen img[src$="zapatillas-urbanas.webp"] {
+    transform: scale(0.9);
+}
 
 /* PRODUCTOS SIN FOTOGRAFÍA */
 
