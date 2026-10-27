@@ -5,7 +5,8 @@ Catálogo web de demostración para explorar artículos deportivos, consultar su
 ## Funcionalidades
 
 - Página de inicio.
-- Listado de seis productos deportivos.
+
+- Listado de siete productos deportivos.
 - Navegación por categorías.
 - Buscador de productos por nombre o marca.
 - Fichas individuales con información de cada producto.
@@ -32,7 +33,8 @@ El proyecto también está publicado mediante GitHub Pages.
 
 ## Optimización
 
-Las seis fotografías de los productos se han convertido a formato WebP para reducir su peso y mejorar la carga del catálogo.
+
+Las siete fotografías de los productos se han convertido a formato WebP para reducir su peso y mejorar la carga del catálogo.
 
 ## Alcance del proyecto
 
