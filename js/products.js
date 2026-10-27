@@ -83,6 +83,7 @@ const productos = [
     image: "assets/images/products/botella-deportiva.webp",
     description: "Botella deportiva para acompañarte durante tus entrenamientos y actividades físicas.",
     sizes: ["Único"],
-    colors: ["Por definir"]
+    colors: [["Negro", "Marrón"]
+]
 }
 ];
