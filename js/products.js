@@ -72,5 +72,17 @@ const productos = [
         description: "Mochila práctica para actividades deportivas.",
         sizes: ["Única"],
         colors: ["Negro", "Azul"]
-    }
+    },
+
+{
+    id: 7,
+    name: "Botella Deportiva",
+    category: "accesorios",
+    brand: "Marca Demo",
+    price: 19.99,
+    image: "assets/images/products/botella-deportiva.webp",
+    description: "Botella deportiva para acompañarte durante tus entrenamientos y actividades físicas.",
+    sizes: ["Único"],
+    colors: ["Por definir"]
+}
 ];
