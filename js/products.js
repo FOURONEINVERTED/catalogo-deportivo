@@ -106,7 +106,7 @@ const productos = [
     category: "balones",
     brand: "Marca Demo",
     price: 24.99,
-    image: "assets/images/products/balon-baloncesto.webp",
+    image: "assets/images/products/Balon-baloncesto.webp",
     description: "Balón de baloncesto para practicar lanzamientos, entrenamientos y actividades deportivas.",
     sizes: ["Único"],
     colors: ["Por definir"]
