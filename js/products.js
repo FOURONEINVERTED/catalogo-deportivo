@@ -110,5 +110,17 @@ const productos = [
     description: "Balón de baloncesto para practicar lanzamientos, entrenamientos y actividades deportivas.",
     sizes: ["Único"],
     colors: ["Por definir"]
+},
+
+{
+    id: 10,
+    name: "Balón de Fútbol",
+    category: "balones",
+    brand: "Marca Demo",
+    price: 29.99,
+    image: "assets/images/products/balon-futbol.webp",
+    description: "Balón de futbol para entrenamientos y actividades deportivas.",
+    sizes: ["Único"],
+    colors: ["Por definir"]
 }
 ];
