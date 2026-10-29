@@ -8,15 +8,15 @@
 body {
     margin: 0;
     font-family: Arial, Helvetica, sans-serif;
-    background-color: #f3f5f8;
-    color: #182230;
+    background-color: #f5f5f5;
+    color: #222222;
     line-height: 1.6;
 }
 
 /* CABECERA */
 
 .site-header {
-    background-color: #111827;
+    background-color: #111111;
     color: #ffffff;
     padding: 24px;
 }

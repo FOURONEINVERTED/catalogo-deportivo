@@ -17,7 +17,7 @@
 
 .main-nav a:hover,
 .main-nav a.nav-current {
-    color: #c7fa5e;
+    color: #ffffff;
 }
 
 .main-nav a.nav-current {
@@ -75,7 +75,7 @@
 .producto-precio {
     font-size: 20px;
     font-weight: 700;
-    color: #182230;
+    color: #111111;
     margin: 0;
 }
 
@@ -164,7 +164,7 @@
 
 .categoria-card h2 {
     font-size: 22px;
-    color: #182230;
+    color: #111111;
     margin: 0 0 12px;
 }
 
@@ -191,11 +191,11 @@
 }
 
 .categoria-card:hover {
-    border-color: #94a3b8;
+    border-color: #111111;
 }
 
 .categoria-card:focus-visible {
-    outline: 3px solid #84cc16;
+    outline: 3px solid #777777;
     outline-offset: 3px;
 }
 
@@ -233,7 +233,7 @@
 .detalle-precio {
     font-size: 28px;
     font-weight: 700;
-    color: #182230;
+    color: #111111;
 }
 
 /* ADAPTACIÓN A MÓVILES */
@@ -268,11 +268,11 @@ a.producto-card {
 }
 
 a.producto-card:hover {
-    border-color: #94a3b8;
+    border-color: #111111;
 }
 
 a.producto-card:focus-visible {
-    outline: 3px solid #84cc16;
+    outline: 3px solid #777777;
     outline-offset: 3px;
 }
 
@@ -305,10 +305,9 @@ a.producto-card:focus-visible {
 }
 
 .buscador-contenedor input:focus {
-    outline: 3px solid #c7fa5e;
-    border-color: #65a30d;
+    outline: 3px solid #777777;
+    border-color: #111111;
 }
-
 /* BUSCADOR EN MÓVILES */
 
 @media (max-width: 600px) {
@@ -325,8 +324,8 @@ a.producto-card:focus-visible {
     justify-content: center;
     padding: 14px 24px;
     margin-top: 20px;
-    background-color: #c7fa5e;
-    color: #182230;
+    background-color: #111111;
+    color: #ffffff;
     font-size: 16px;
     font-weight: 700;
     text-decoration: none;
@@ -335,11 +334,11 @@ a.producto-card:focus-visible {
 }
 
 .boton-explorar:hover {
-    background-color: #a3e635;
+    background-color: #333333;
 }
 
 .boton-explorar:focus-visible {
-    outline: 3px solid #65a30d;
+    outline: 3px solid #777777;
     outline-offset: 3px;
 }
 
