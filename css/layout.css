@@ -350,3 +350,37 @@ a.producto-card:focus-visible {
         text-align: center;
     }
 }
+/* PIE DE PÁGINA FOUR ONE INVERTED */
+
+.site-footer {
+    background-color: #111111;
+    color: #ffffff;
+    text-align: center;
+    padding: 32px 20px;
+    margin-top: 48px;
+}
+
+.site-footer p {
+    margin: 0 0 12px;
+    color: #ffffff;
+}
+
+.site-footer p:last-child {
+    margin-bottom: 0;
+}
+
+.site-footer a {
+    color: #ffffff;
+    text-decoration: underline;
+    text-underline-offset: 3px;
+}
+
+.site-footer a:hover {
+    color: #d1d5db;
+}
+
+.site-footer a:focus-visible {
+    outline: 2px solid #ffffff;
+    outline-offset: 4px;
+}
+
