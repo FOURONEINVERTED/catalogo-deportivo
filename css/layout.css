@@ -543,3 +543,15 @@ aside[aria-label="Estado del catálogo"] p {
     color: #666666;
     line-height: 1.7;
 }
+
+/* TÍTULOS MINIMALISTAS DE PRODUCTOS Y CATEGORÍAS */
+
+#vista-productos > h1,
+#vista-productos > h2,
+#vista-categorias > h1,
+#vista-categorias > h2 {
+    color: #111111;
+    font-weight: 500;
+    letter-spacing: 1px;
+    line-height: 1.3;
+}
