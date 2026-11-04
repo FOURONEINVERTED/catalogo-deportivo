@@ -490,3 +490,21 @@ aside[aria-label="Estado del catálogo"] p {
         transition: none;
     }
 }
+
+/* EFECTO SUAVE EN TARJETAS DE CATEGORÍAS */
+
+.categoria-card {
+    transition: box-shadow 0.25s ease;
+}
+
+@media (hover: hover) {
+    .categoria-card:hover {
+        box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .categoria-card {
+        transition: none;
+    }
+}
