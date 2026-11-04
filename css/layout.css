@@ -608,3 +608,13 @@ aside[aria-label="Estado del catálogo"] p {
     line-height: 1.5;
     margin-bottom: 16px;
 }
+
+/* LEMA DE LA MARCA EN EL PIE DE PÁGINA */
+
+.site-footer > p:nth-of-type(2) {
+    font-size: 12px;
+    font-weight: 400;
+    letter-spacing: 2px;
+    line-height: 1.8;
+    margin-bottom: 24px;
+}
