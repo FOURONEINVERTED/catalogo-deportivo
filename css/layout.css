@@ -662,3 +662,11 @@ aside[aria-label="Estado del catálogo"] p {
     color: #666666;
     line-height: 1.7;
 }
+
+/* TEXTOS DE BIENVENIDA EN GRIS NEUTRO */
+
+#vista-inicio > p:nth-of-type(2),
+#vista-inicio > p:nth-of-type(3) {
+    color: #666666;
+    line-height: 1.7;
+}
