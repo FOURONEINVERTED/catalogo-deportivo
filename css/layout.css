@@ -435,3 +435,33 @@ aside[aria-label="Estado del catálogo"] p {
     font-weight: 500;
     letter-spacing: 1px;
 }
+
+/* MOVIMIENTO SUAVE EN FOTOGRAFÍAS */
+
+.producto-imagen img {
+    transition: transform 0.3s ease;
+}
+
+@media (hover: hover) {
+    .producto-imagen:hover img {
+        transform: scale(1.03);
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .producto-imagen img {
+        transition: none;
+    }
+}
+
+/* AMPLIACIÓN DE GORRA MLB Y ZAPATILLAS URBANAS */
+
+@media (hover: hover) {
+    #vista-productos .producto-imagen:hover img[src$="gorra-mlb.webp"] {
+        transform: scale(0.7725);
+    }
+
+    #vista-productos .producto-imagen:hover img[src$="zapatillas-urbanas.webp"] {
+        transform: scale(0.927);
+    }
+}
