@@ -637,3 +637,11 @@ aside[aria-label="Estado del catálogo"] p {
         transition: none;
     }
 }
+
+/* NAVEGACIÓN CON TECLADO EN EL PIE DE PÁGINA */
+
+.site-footer a:focus-visible {
+    outline: 2px solid #ffffff;
+    outline-offset: 4px;
+    border-radius: 2px;
+}
