@@ -401,3 +401,15 @@ aside[aria-label="Estado del catálogo"] p {
     margin: 0;
     color: #222222;
 }
+
+
+/* LEMA DE FOUR ONE INVERTED */
+
+#vista-inicio > p:first-of-type {
+    color: #111111;
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    line-height: 1.8;
+    margin-bottom: 28px;
+}
