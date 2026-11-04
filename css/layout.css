@@ -465,3 +465,10 @@ aside[aria-label="Estado del catálogo"] p {
         transform: scale(0.927);
     }
 }
+
+/* BORDE SUTIL EN FOTOGRAFÍAS */
+
+.producto-imagen {
+    border: 1px solid #e8e8e8;
+    box-sizing: border-box;
+}
