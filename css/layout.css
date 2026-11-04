@@ -645,3 +645,13 @@ aside[aria-label="Estado del catálogo"] p {
     outline-offset: 4px;
     border-radius: 2px;
 }
+
+/* COPYRIGHT DISCRETO EN EL PIE DE PÁGINA */
+
+.site-footer > p:last-of-type {
+    color: #aaaaaa;
+    font-size: 12px;
+    font-weight: 400;
+    letter-spacing: 0.5px;
+    margin-top: 28px;
+}
