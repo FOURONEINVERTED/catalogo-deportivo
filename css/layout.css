@@ -669,4 +669,5 @@ aside[aria-label="Estado del catálogo"] p {
 #vista-inicio > p:nth-of-type(3) {
     color: #666666;
     line-height: 1.7;
+    max-width: 680px;
 }
