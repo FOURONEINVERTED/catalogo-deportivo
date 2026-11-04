@@ -3,6 +3,25 @@
 
 ## Estado actual del proyecto
 
+### Visibilidad en buscadores
+
+Durante la preparación de FOUR ONE INVERTED, la web
+incluye una instrucción temporal `noindex` en `index.html`.
+
+Esta instrucción solicita a los buscadores que no
+incluyan la página en sus resultados.
+
+**Pendiente antes del lanzamiento oficial:**
+
+- Retirar la etiqueta `noindex` de `index.html`.
+- Publicar el cambio en GitHub Pages.
+- Comprobar que la etiqueta ya no aparece en el
+  código fuente de la web pública.
+- Revisar la indexación en Google.
+
+La web sigue siendo pública y accesible mediante
+su dirección, incluso mientras utiliza `noindex`.
+
 FOUR ONE INVERTED es una marca en preparación.
 
 Esta web funciona actualmente como catálogo de demostración.
