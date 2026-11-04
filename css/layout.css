@@ -536,3 +536,10 @@ aside[aria-label="Estado del catálogo"] p {
     color: #666666;
     line-height: 1.7;
 }
+
+/* DESCRIPCIÓN DE CATEGORÍAS EN GRIS NEUTRO */
+
+#vista-categorias > p:first-of-type {
+    color: #666666;
+    line-height: 1.7;
+}
