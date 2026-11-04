@@ -1,5 +1,22 @@
 # Catálogo Deportivo
 
+
+## Estado actual del proyecto
+
+FOUR ONE INVERTED es una marca en preparación.
+
+Esta web funciona actualmente como catálogo de demostración.
+Los 10 productos publicados, sus fotografías, marcas, precios
+y características son ejemplos y no representan todavía
+el catálogo comercial definitivo.
+
+El catálogo oficial se incorporará cuando estén disponibles
+las fotografías y los datos reales de los productos.
+
+La web permite consultar productos y contactar por WhatsApp
+o correo electrónico. No dispone de carrito, pagos online
+ni cuentas de usuario.
+
 Catálogo web de demostración para explorar artículos deportivos, consultar sus fotografías, precios y características.
 
 ## Funcionalidades
