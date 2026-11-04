@@ -572,3 +572,21 @@ aside[aria-label="Estado del catálogo"] p {
     padding-bottom: 16px;
     border-bottom: 1px solid #e5e5e5;
 }
+
+/* TRANSICIÓN SUAVE EN EL MENÚ SUPERIOR */
+
+.site-header nav a {
+    transition: opacity 0.2s ease;
+}
+
+@media (hover: hover) {
+    .site-header nav a:hover {
+        opacity: 0.75;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .site-header nav a {
+        transition: none;
+    }
+}
