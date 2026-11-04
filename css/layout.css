@@ -598,3 +598,13 @@ aside[aria-label="Estado del catálogo"] p {
     outline-offset: 4px;
     border-radius: 2px;
 }
+
+/* NOMBRE DE LA MARCA EN EL PIE DE PÁGINA */
+
+.site-footer > p:first-of-type {
+    font-size: 20px;
+    font-weight: 500;
+    letter-spacing: 3px;
+    line-height: 1.5;
+    margin-bottom: 16px;
+}
