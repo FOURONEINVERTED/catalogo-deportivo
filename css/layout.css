@@ -655,3 +655,10 @@ aside[aria-label="Estado del catálogo"] p {
     letter-spacing: 0.5px;
     margin-top: 28px;
 }
+
+/* TEXTO DE CONTACTO COMERCIAL EN GRIS NEUTRO */
+
+#vista-inicio h2 + p {
+    color: #666666;
+    line-height: 1.7;
+}
