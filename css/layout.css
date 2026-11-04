@@ -619,3 +619,21 @@ aside[aria-label="Estado del catálogo"] p {
     line-height: 1.8;
     margin-bottom: 24px;
 }
+
+/* TRANSICIÓN SUAVE EN ENLACES DEL PIE DE PÁGINA */
+
+.site-footer a {
+    transition: opacity 0.2s ease;
+}
+
+@media (hover: hover) {
+    .site-footer a:hover {
+        opacity: 0.75;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .site-footer a {
+        transition: none;
+    }
+}
