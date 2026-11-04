@@ -562,3 +562,13 @@ aside[aria-label="Estado del catálogo"] p {
 .producto-card {
     line-height: 1.6;
 }
+
+/* LÍNEA MINIMALISTA BAJO TÍTULOS DE SECCIÓN */
+
+#vista-productos > h1,
+#vista-productos > h2,
+#vista-categorias > h1,
+#vista-categorias > h2 {
+    padding-bottom: 16px;
+    border-bottom: 1px solid #e5e5e5;
+}
