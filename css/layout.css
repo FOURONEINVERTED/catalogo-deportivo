@@ -520,3 +520,12 @@ aside[aria-label="Estado del catálogo"] p {
         box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
     }
 }
+
+/* BUSCADOR ACTIVO EN NEGRO */
+
+.buscador-contenedor input:focus {
+    border-color: #111111;
+    outline: 2px solid #111111;
+    outline-offset: 2px;
+    box-shadow: none;
+}
