@@ -529,3 +529,10 @@ aside[aria-label="Estado del catálogo"] p {
     outline-offset: 2px;
     box-shadow: none;
 }
+
+/* DESCRIPCIÓN DEL CATÁLOGO EN GRIS NEUTRO */
+
+#vista-productos > p:first-of-type {
+    color: #666666;
+    line-height: 1.7;
+}
