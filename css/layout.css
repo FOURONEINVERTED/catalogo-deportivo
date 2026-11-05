@@ -872,3 +872,21 @@ aside[aria-label="Estado del catálogo"] p {
     background: transparent;
 }
 
+
+/* LOGOTIPO EN EL ENCABEZADO */
+
+.site-header .logo-header {
+    display: block;
+    width: 220px;
+    max-width: 100%;
+    height: auto;
+    filter: brightness(0) invert(1);
+}
+
+/* ESPACIO DEL ENCABEZADO EN MÓVIL */
+
+@media (max-width: 600px) {
+    .site-header .header-content {
+        row-gap: 8px;
+    }
+}
