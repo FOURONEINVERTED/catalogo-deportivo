@@ -697,3 +697,11 @@ aside[aria-label="Estado del catálogo"] p {
     padding-bottom: 16px;
     border-bottom: 1px solid #e5e5e5;
 }
+
+/* SEPARACIÓN DEL PRECIO EN LA FICHA DE PRODUCTO */
+
+.detalle-precio {
+    padding-bottom: 16px;
+    border-bottom: 1px solid #e5e5e5;
+    margin-bottom: 20px;
+}
