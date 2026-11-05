@@ -232,6 +232,7 @@
     background-color: #ffffff;
     padding: 30px;
     border-radius: 12px;
+    border: 1px solid #e5e5e5;
 }
 
 .detalle-precio {
