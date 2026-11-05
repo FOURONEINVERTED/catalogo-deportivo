@@ -679,3 +679,10 @@ aside[aria-label="Estado del catálogo"] p {
     color: #666666;
     line-height: 1.7;
 }
+
+/* BORDE SUTIL EN LA INFORMACIÓN DEL PRODUCTO */
+
+.detalle-informacion {
+    border: 1px solid #e8e8e8;
+    box-sizing: border-box;
+}
