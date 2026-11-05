@@ -925,3 +925,18 @@ aside[aria-label="Estado del catálogo"] p {
         grid-column: 2;
     }
 }
+
+/* CENTRAR DOS RESULTADOS DE BÚSQUEDA */
+
+@media (min-width: 1025px) {
+    .productos-grid.dos-resultados {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 24px;
+    }
+
+    .productos-grid.dos-resultados > .producto-card:not([hidden]) {
+        flex: 0 0 calc((100% - 48px) / 3);
+    }
+}

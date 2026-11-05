@@ -27,6 +27,9 @@ function iniciarBuscador() {
                 encontrados++;
             }
         });
+        
+        // IDENTIFICAR CUANDO HAY DOS RESULTADOS
+        contenedor.classList.toggle("dos-resultados", encontrados === 2);
 
         let mensaje = document.getElementById("mensaje-sin-resultados");
 
