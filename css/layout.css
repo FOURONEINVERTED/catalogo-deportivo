@@ -904,14 +904,17 @@ aside[aria-label="Estado del catálogo"] p {
 }
 
 
-/* DESCRIPCIÓN DE LA SECCIÓN PRODUCTOS */
 
-#vista-productos > p {
+/* DESCRIPCIONES DE PRODUCTOS Y CATEGORÍAS */
+
+#vista-productos > p,
+#vista-categorias > p {
     max-width: 740px;
     color: #666666;
     font-size: 16px;
     line-height: 1.7;
 }
+
 
 /* ALTURA DE LAS FOTOGRAFÍAS EN MÓVIL */
 
