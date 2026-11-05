@@ -744,3 +744,13 @@ aside[aria-label="Estado del catálogo"] p {
     color: #666666;
     line-height: 1.7;
 }
+
+/* CENTRAR LA ÚLTIMA CATEGORÍA CUANDO QUEDA SOLA */
+
+@media (min-width: 601px) {
+    #lista-categorias > .categoria-card:last-child:nth-child(odd) {
+        grid-column: 1 / -1;
+        width: calc((100% - 24px) / 2);
+        justify-self: center;
+    }
+}
