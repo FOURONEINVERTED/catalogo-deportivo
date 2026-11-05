@@ -764,3 +764,13 @@ aside[aria-label="Estado del catálogo"] p {
     letter-spacing: 0.5px;
     line-height: 1.4;
 }
+
+/* TIPOGRAFÍA MINIMALISTA EN TARJETAS DE PRODUCTOS */
+
+.producto-card h2,
+.producto-card h3 {
+    color: #111111;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    line-height: 1.4;
+}
