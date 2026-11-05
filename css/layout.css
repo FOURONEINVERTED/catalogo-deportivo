@@ -711,3 +711,11 @@ aside[aria-label="Estado del catálogo"] p {
 .detalle-informacion {
     box-shadow: 0 4px 16px rgba(0, 0, 0, 0.04);
 }
+
+/* CENTRADO VERTICAL DE INFORMACIÓN DEL PRODUCTO */
+
+@media (min-width: 1024px) {
+    .detalle-informacion {
+        align-self: center;
+    }
+}
