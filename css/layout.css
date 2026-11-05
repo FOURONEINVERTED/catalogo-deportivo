@@ -672,3 +672,10 @@ aside[aria-label="Estado del catálogo"] p {
     line-height: 1.7;
     max-width: 680px;
 }
+
+/* TEXTOS INFORMATIVOS DE LAS FICHAS DE PRODUCTO */
+
+.detalle-informacion p:not(.detalle-precio) {
+    color: #666666;
+    line-height: 1.7;
+}
