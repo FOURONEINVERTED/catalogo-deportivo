@@ -719,3 +719,10 @@ aside[aria-label="Estado del catálogo"] p {
         align-self: center;
     }
 }
+
+/* MENSAJE SIN RESULTADOS EN GRIS NEUTRO */
+
+#mensaje-sin-resultados {
+    color: #666666;
+    line-height: 1.7;
+}
