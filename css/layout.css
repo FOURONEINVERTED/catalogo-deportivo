@@ -705,3 +705,9 @@ aside[aria-label="Estado del catálogo"] p {
     border-bottom: 1px solid #e5e5e5;
     margin-bottom: 20px;
 }
+
+/* SOMBRA SUAVE EN LA INFORMACIÓN DEL PRODUCTO */
+
+.detalle-informacion {
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.04);
+}
