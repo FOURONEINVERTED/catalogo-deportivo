@@ -104,3 +104,22 @@ window.addEventListener("hashchange", () => {
 
     rutaAnterior = rutaActual;
 });
+
+/* CENTRAR LA FOTOGRAFÍA AL ABRIR UN PRODUCTO */
+
+window.addEventListener("hashchange", () => {
+    if (!window.location.hash.startsWith("#/producto/")) {
+        return;
+    }
+
+    requestAnimationFrame(() => {
+        const imagen = document.querySelector("#detalle-producto img");
+
+        if (imagen) {
+            imagen.scrollIntoView({
+                behavior: "auto",
+                block: "center"
+            });
+        }
+    });
+});
