@@ -909,3 +909,11 @@ aside[aria-label="Estado del catálogo"] p {
     font-size: 16px;
     line-height: 1.7;
 }
+
+/* ALTURA DE LAS FOTOGRAFÍAS EN MÓVIL */
+
+@media (max-width: 600px) {
+    .producto-imagen {
+        height: 260px;
+    }
+}
