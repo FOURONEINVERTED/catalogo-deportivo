@@ -920,23 +920,32 @@ aside[aria-label="Estado del catálogo"] p {
 
 /* CENTRAR ÚLTIMA TARJETA SOLITARIA EN PRODUCTOS */
 
+
+/* CENTRAR LA ÚLTIMA TARJETA SOLO SIN FILTROS */
+
 @media (min-width: 1025px) {
-    .productos-grid > :last-child:nth-child(3n + 1) {
+    .productos-grid:not(:has(> .producto-card[hidden]))
+    > :last-child:nth-child(3n + 1) {
         grid-column: 2;
     }
 }
 
-/* CENTRAR DOS RESULTADOS DE BÚSQUEDA */
+
+
+/* CENTRAR UNO O DOS RESULTADOS DE BÚSQUEDA */
 
 @media (min-width: 1025px) {
-    .productos-grid.dos-resultados {
+    .productos-grid.dos-resultados,
+    .productos-grid.un-resultado {
         display: flex;
         justify-content: center;
         flex-wrap: wrap;
         gap: 24px;
     }
 
-    .productos-grid.dos-resultados > .producto-card:not([hidden]) {
+    .productos-grid.dos-resultados > .producto-card:not([hidden]),
+    .productos-grid.un-resultado > .producto-card:not([hidden]) {
         flex: 0 0 calc((100% - 48px) / 3);
     }
 }
+

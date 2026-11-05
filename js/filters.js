@@ -18,18 +18,33 @@ function iniciarBuscador() {
         let encontrados = 0;
 
         tarjetas.forEach((tarjeta) => {
-            const contenido = tarjeta.textContent.toLocaleLowerCase("es");
-            const productoCoincide = contenido.includes(texto);
+           
 
-            tarjeta.hidden = !productoCoincide;
+const nombre = (tarjeta.querySelector("h2, h3")?.textContent || "")
+    .toLocaleLowerCase("es")
+    .trim();
 
-            if (productoCoincide) {
-                encontrados++;
-            }
-        });
-        
+const contenido = tarjeta.textContent
+    .toLocaleLowerCase("es")
+    .replace(/\s+/g, " ")
+    .trim();
+
+const productoCoincide = texto.length === 1
+    ? nombre.startsWith(texto)
+    : (" " + contenido).includes(" " + texto);
+
+tarjeta.hidden = !productoCoincide;
+
+if (productoCoincide) {
+    encontrados++;
+}
+
+});
+
+
         // IDENTIFICAR CUANDO HAY DOS RESULTADOS
         contenedor.classList.toggle("dos-resultados", encontrados === 2);
+        contenedor.classList.toggle("un-resultado", encontrados === 1);
 
         let mensaje = document.getElementById("mensaje-sin-resultados");
 
