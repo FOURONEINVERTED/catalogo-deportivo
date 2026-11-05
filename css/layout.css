@@ -831,3 +831,13 @@ aside[aria-label="Estado del catálogo"] p {
     }
 }
 
+/* TÍTULO PRINCIPAL DE INICIO */
+
+#vista-inicio h1 {
+    color: #111111;
+    font-size: clamp(30px, 3.4vw, 44px);
+    font-weight: 600;
+    line-height: 1.2;
+    letter-spacing: -0.02em;
+}
+
