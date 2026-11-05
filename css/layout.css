@@ -792,3 +792,34 @@ aside[aria-label="Estado del catálogo"] p {
         transition: none;
     }
 }
+
+/* ENLACE PARA VOLVER AL CATÁLOGO */
+
+.enlace-volver-productos {
+    display: inline-block;
+    margin-bottom: 24px;
+    color: #666666;
+    font-size: 14px;
+    font-weight: 500;
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+@media (hover: hover) {
+    .enlace-volver-productos:hover {
+        color: #111111;
+        text-decoration: underline;
+    }
+}
+
+.enlace-volver-productos:focus-visible {
+    outline: 2px solid #111111;
+    outline-offset: 4px;
+    border-radius: 2px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .enlace-volver-productos {
+        transition: none;
+    }
+}
