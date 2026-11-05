@@ -726,3 +726,14 @@ aside[aria-label="Estado del catálogo"] p {
     color: #666666;
     line-height: 1.7;
 }
+
+/* TÍTULO MINIMALISTA DE CADA CATEGORÍA */
+
+#titulo-categoria {
+    color: #111111;
+    font-weight: 500;
+    letter-spacing: 1px;
+    line-height: 1.3;
+    padding-bottom: 16px;
+    border-bottom: 1px solid #e5e5e5;
+}
