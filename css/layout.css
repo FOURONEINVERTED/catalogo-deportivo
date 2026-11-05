@@ -841,3 +841,13 @@ aside[aria-label="Estado del catálogo"] p {
     letter-spacing: -0.02em;
 }
 
+/* TEXTOS DE PRESENTACIÓN DE INICIO */
+
+.texto-presentacion-inicio {
+    max-width: 740px;
+    color: #666666;
+    font-size: 16px;
+    line-height: 1.7;
+    margin-bottom: 18px;
+}
+
