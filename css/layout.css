@@ -900,3 +900,12 @@ aside[aria-label="Estado del catálogo"] p {
     line-height: 1.2;
     letter-spacing: -0.02em;
 }
+
+/* DESCRIPCIÓN DE LA SECCIÓN PRODUCTOS */
+
+#vista-productos > p {
+    max-width: 740px;
+    color: #666666;
+    font-size: 16px;
+    line-height: 1.7;
+}
