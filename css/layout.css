@@ -737,3 +737,10 @@ aside[aria-label="Estado del catálogo"] p {
     padding-bottom: 16px;
     border-bottom: 1px solid #e5e5e5;
 }
+
+/* DESCRIPCIÓN DE CADA CATEGORÍA EN GRIS NEUTRO */
+
+#vista-categoria-detalle > p:first-of-type {
+    color: #666666;
+    line-height: 1.7;
+}
