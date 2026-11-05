@@ -774,3 +774,21 @@ aside[aria-label="Estado del catálogo"] p {
     letter-spacing: 0.5px;
     line-height: 1.4;
 }
+
+/* EFECTO SUAVE AL PASAR EL RATÓN SOBRE EL BUSCADOR */
+
+.buscador-contenedor input {
+    transition: border-color 0.2s ease;
+}
+
+@media (hover: hover) {
+    .buscador-contenedor input:not(:focus):hover {
+        border-color: #999999;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .buscador-contenedor input {
+        transition: none;
+    }
+}
