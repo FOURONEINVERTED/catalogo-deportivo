@@ -955,3 +955,20 @@ aside[aria-label="Estado del catálogo"] p {
     }
 }
 
+/* DETALLE GEOMÉTRICO EN LAS CATEGORÍAS */
+
+.categoria-card {
+    position: relative;
+}
+
+.categoria-card::after {
+    content: "↗";
+    position: absolute;
+    top: 24px;
+    right: 28px;
+    color: #888888;
+    font-size: 22px;
+    line-height: 1;
+    pointer-events: none;
+}
+
