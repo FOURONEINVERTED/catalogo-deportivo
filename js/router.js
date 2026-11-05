@@ -51,10 +51,18 @@ function mostrarVista() {
     document.querySelectorAll(".main-nav a").forEach((enlace) => {
         const destino = enlace.getAttribute("href");
 
-        const activa =
-            destino === ruta ||
-            (ruta.startsWith("#/categoria/") &&
-             destino === "#/categorias");
+        
+const activa =
+    destino === ruta ||
+    (ruta.startsWith("#/categoria/") &&
+        destino === "#/categorias") ||
+    (ruta.startsWith("#/producto/") &&
+        destino === (
+            rutaAnterior.startsWith("#/categoria/")
+                ? "#/categorias"
+                : "#/productos"
+        ));
+
 
         enlace.classList.toggle("nav-current", activa);
 
