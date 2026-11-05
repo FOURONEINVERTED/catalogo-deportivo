@@ -67,3 +67,32 @@ function mostrarVista() {
 }
 
 window.addEventListener("hashchange", mostrarVista);
+
+/* RECORDAR DESDE DÓNDE SE ABRIÓ UN PRODUCTO */
+
+let rutaAnterior = window.location.hash || "#/inicio";
+
+window.addEventListener("hashchange", () => {
+    const rutaActual = window.location.hash;
+
+    if (rutaActual.startsWith("#/producto/")) {
+        const enlaceVolver = document.querySelector(
+            ".enlace-volver-productos"
+        );
+
+        if (enlaceVolver) {
+            const vieneDeCategoria =
+                rutaAnterior.startsWith("#/categoria/");
+
+            enlaceVolver.href = vieneDeCategoria
+                ? rutaAnterior
+                : "#/productos";
+
+            enlaceVolver.textContent = vieneDeCategoria
+                ? "← Volver a la categoría"
+                : "← Volver a productos";
+        }
+    }
+
+    rutaAnterior = rutaActual;
+});
