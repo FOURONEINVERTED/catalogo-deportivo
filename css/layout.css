@@ -917,3 +917,11 @@ aside[aria-label="Estado del catálogo"] p {
         height: 260px;
     }
 }
+
+/* CENTRAR ÚLTIMA TARJETA SOLITARIA EN PRODUCTOS */
+
+@media (min-width: 1025px) {
+    .productos-grid > :last-child:nth-child(3n + 1) {
+        grid-column: 2;
+    }
+}
