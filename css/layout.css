@@ -997,3 +997,19 @@ aside[aria-label="Estado del catálogo"] p {
     margin: 0 auto;
     filter: brightness(0) invert(1);
 }
+
+/* RESALTAR EL LOGOTIPO DEL PIE DE PÁGINA CON TAB */
+
+.site-footer .footer-brand {
+    text-align: center;
+}
+
+.site-footer .footer-brand a {
+    display: inline-block;
+    border-radius: 4px;
+}
+
+.site-footer .footer-brand a:focus-visible {
+    outline: 2px solid #ffffff;
+    outline-offset: 6px;
+}
