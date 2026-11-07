@@ -986,3 +986,14 @@ aside[aria-label="Estado del catálogo"] p {
     letter-spacing: -0.02em;
 }
 
+
+/* LOGOTIPO EN EL PIE DE PÁGINA */
+
+.site-footer .logo-footer {
+    display: block;
+    width: 260px;
+    max-width: 100%;
+    height: auto;
+    margin: 0 auto;
+    filter: brightness(0) invert(1);
+}
