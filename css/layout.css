@@ -1013,3 +1013,75 @@ aside[aria-label="Estado del catálogo"] p {
     outline: 2px solid #ffffff;
     outline-offset: 6px;
 }
+
+/* PRESENTACIÓN DE INICIO CON CARRUSEL LATERAL */
+
+#vista-inicio .inicio-presentacion {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) 280px;
+    align-items: center;
+    gap: 48px;
+}
+
+#vista-inicio .inicio-texto {
+    min-width: 0;
+}
+
+/* ESPACIO DEL CARRUSEL VERTICAL */
+
+#vista-inicio .inicio-carrusel {
+    width: 100%;
+    min-height: 480px;
+    background-color: #e5e5e5;
+    border-radius: 10px;
+}
+
+/* ADAPTACIÓN A MÓVIL */
+
+@media (max-width: 767px) {
+    #vista-inicio .inicio-presentacion {
+        grid-template-columns: 1fr;
+        gap: 32px;
+    }
+
+    #vista-inicio .inicio-carrusel {
+        max-width: 300px;
+        min-height: 400px;
+        margin: 0 auto;
+    }
+}
+
+/* PRIMERA FOTOGRAFÍA DEL CARRUSEL */
+
+#vista-inicio .inicio-carrusel {
+    height: 520px;
+    overflow: hidden;
+}
+
+#vista-inicio .carrusel-foto {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    filter: grayscale(100%) contrast(1.35) brightness(1.05);
+
+}
+
+@media (max-width: 767px) {
+    #vista-inicio .inicio-carrusel {
+        height: 400px;
+    }
+}
+
+/* TRANSICIÓN SUAVE DEL CARRUSEL */
+
+#vista-inicio .carrusel-foto {
+    transition: opacity 0.4s ease-in-out;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    #vista-inicio .carrusel-foto {
+        transition: none;
+    }
+}
