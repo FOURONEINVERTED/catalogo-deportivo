@@ -24,24 +24,18 @@ document.addEventListener("DOMContentLoaded", () => {
 
     if (!imagen) return;
 
-    const fotografias = [
-        {
-            src: "assets/images/products/zapatillas-running.webp",
-            alt: "Zapatillas deportivas"
-        },
-        {
-            src: "assets/images/products/gorra-deportiva.webp",
-            alt: "Gorra deportiva"
-        },
-        {
-            src: "assets/images/products/mochila-deportiva.webp",
-            alt: "Mochila deportiva"
-        },
-        {
-            src: "assets/images/products/Balon-baloncesto.webp",
-            alt: "Balón de baloncesto"
-        }
-    ];
+   
+const fotografias = [
+    {
+        src: "assets/images/products/gorra-deportiva.webp",
+        alt: "Gorra LA"
+    },
+    {
+        src: "assets/images/products/Balon-baloncesto.webp",
+        alt: "Balón de baloncesto"
+    }
+];
+
 
     /* PRECARGAR FOTOGRAFÍAS */
 
