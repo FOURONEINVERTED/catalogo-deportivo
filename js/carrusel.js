@@ -6,6 +6,14 @@ document.addEventListener("DOMContentLoaded", () => {
         "#vista-inicio .carrusel-foto"
     );
 
+    const anterior = document.querySelector(
+        "#vista-inicio .carrusel-anterior"
+    );
+
+    const siguiente = document.querySelector(
+        "#vista-inicio .carrusel-siguiente"
+    );
+
     if (!imagen) return;
 
     const fotografias = [
@@ -27,22 +35,57 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     ];
 
-/* PRECARGAR LAS FOTOGRAFÍAS */
+    /* PRECARGAR FOTOGRAFÍAS */
 
-fotografias.forEach((foto) => {
-    const imagenPrecargada = new Image();
-    imagenPrecargada.src = foto.src;
-});
+    fotografias.forEach((foto) => {
+        const imagenPrecargada = new Image();
+        imagenPrecargada.src = foto.src;
+    });
 
     let indice = 0;
 
-    /* CAMBIO AUTOMÁTICO CADA 2,5 SEGUNDOS */
+    /* MOSTRAR UNA FOTOGRAFÍA */
 
-    setInterval(() => {
-        indice = (indice + 1) % fotografias.length;
+    function mostrarFotografia(nuevoIndice) {
+        indice = (
+            nuevoIndice + fotografias.length
+        ) % fotografias.length;
 
         imagen.src = fotografias[indice].src;
         imagen.alt = fotografias[indice].alt;
-        imagen.style.opacity = "1";
+    }
+
+    /* CAMBIO AUTOMÁTICO CADA 2,5 SEGUNDOS */
+
+    let temporizador = setInterval(() => {
+        mostrarFotografia(indice + 1);
     }, 2500);
+
+    /* REINICIAR EL TIEMPO TRAS UN CLIC */
+
+    function reiniciarTemporizador() {
+        clearInterval(temporizador);
+
+        temporizador = setInterval(() => {
+            mostrarFotografia(indice + 1);
+        }, 2500);
+    }
+
+    /* FLECHA ANTERIOR */
+
+    if (anterior) {
+        anterior.addEventListener("click", () => {
+            mostrarFotografia(indice - 1);
+            reiniciarTemporizador();
+        });
+    }
+
+    /* FLECHA SIGUIENTE */
+
+    if (siguiente) {
+        siguiente.addEventListener("click", () => {
+            mostrarFotografia(indice + 1);
+            reiniciarTemporizador();
+        });
+    }
 });

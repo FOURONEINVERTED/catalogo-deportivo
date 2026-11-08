@@ -1085,3 +1085,53 @@ aside[aria-label="Estado del catálogo"] p {
         transition: none;
     }
 }
+
+/* FLECHAS DEL CARRUSEL DE INICIO */
+
+#vista-inicio .inicio-carrusel {
+    position: relative;
+}
+
+#vista-inicio .carrusel-anterior,
+#vista-inicio .carrusel-siguiente {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 2;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 36px;
+    height: 36px;
+    padding: 0;
+
+    border: 1px solid rgba(255, 255, 255, 0.7);
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0.8);
+    color: #111;
+
+    font-size: 18px;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+#vista-inicio .carrusel-anterior {
+    left: 12px;
+}
+
+#vista-inicio .carrusel-siguiente {
+    right: 12px;
+}
+
+#vista-inicio .carrusel-anterior:hover,
+#vista-inicio .carrusel-siguiente:hover {
+    background-color: #fff;
+}
+
+#vista-inicio .carrusel-anterior:focus-visible,
+#vista-inicio .carrusel-siguiente:focus-visible {
+    outline: 2px solid #fff;
+    outline-offset: 3px;
+}
