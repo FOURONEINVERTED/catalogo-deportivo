@@ -27,6 +27,13 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     ];
 
+/* PRECARGAR LAS FOTOGRAFÍAS */
+
+fotografias.forEach((foto) => {
+    const imagenPrecargada = new Image();
+    imagenPrecargada.src = foto.src;
+});
+
     let indice = 0;
 
     /* CAMBIO AUTOMÁTICO CADA 2,5 SEGUNDOS */
