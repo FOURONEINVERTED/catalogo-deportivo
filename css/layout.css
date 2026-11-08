@@ -1135,3 +1135,39 @@ aside[aria-label="Estado del catálogo"] p {
     outline: 2px solid #fff;
     outline-offset: 3px;
 }
+
+/* INDICADORES DEL CARRUSEL */
+
+#vista-inicio .carrusel-indicadores {
+    position: absolute;
+    bottom: 18px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 3;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 9px;
+}
+
+#vista-inicio .carrusel-punto {
+    width: 9px;
+    height: 9px;
+    padding: 0;
+
+    border: 1px solid #fff;
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0.35);
+
+    cursor: pointer;
+}
+
+#vista-inicio .carrusel-punto.activo {
+    background-color: #fff;
+}
+
+#vista-inicio .carrusel-punto:focus-visible {
+    outline: 2px solid #fff;
+    outline-offset: 3px;
+}

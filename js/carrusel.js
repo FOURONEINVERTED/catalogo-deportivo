@@ -14,6 +14,10 @@ document.addEventListener("DOMContentLoaded", () => {
         "#vista-inicio .carrusel-siguiente"
     );
 
+    const puntos = document.querySelectorAll(
+        "#vista-inicio .carrusel-punto"
+    );
+
     if (!imagen) return;
 
     const fotografias = [
@@ -44,7 +48,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     let indice = 0;
 
-    /* MOSTRAR UNA FOTOGRAFÍA */
+    /* ACTUALIZAR FOTOGRAFÍA E INDICADORES */
 
     function mostrarFotografia(nuevoIndice) {
         indice = (
@@ -53,15 +57,18 @@ document.addEventListener("DOMContentLoaded", () => {
 
         imagen.src = fotografias[indice].src;
         imagen.alt = fotografias[indice].alt;
+
+        puntos.forEach((punto, posicion) => {
+            const activo = posicion === indice;
+
+            punto.classList.toggle("activo", activo);
+            punto.setAttribute("aria-pressed", String(activo));
+        });
     }
 
     /* CAMBIO AUTOMÁTICO CADA 2,5 SEGUNDOS */
 
-    let temporizador = setInterval(() => {
-        mostrarFotografia(indice + 1);
-    }, 2500);
-
-    /* REINICIAR EL TIEMPO TRAS UN CLIC */
+    let temporizador;
 
     function reiniciarTemporizador() {
         clearInterval(temporizador);
@@ -71,7 +78,7 @@ document.addEventListener("DOMContentLoaded", () => {
         }, 2500);
     }
 
-    /* FLECHA ANTERIOR */
+    /* FLECHAS */
 
     if (anterior) {
         anterior.addEventListener("click", () => {
@@ -80,12 +87,24 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     }
 
-    /* FLECHA SIGUIENTE */
-
     if (siguiente) {
         siguiente.addEventListener("click", () => {
             mostrarFotografia(indice + 1);
             reiniciarTemporizador();
         });
     }
+
+    /* INDICADORES */
+
+    puntos.forEach((punto, posicion) => {
+        punto.addEventListener("click", () => {
+            mostrarFotografia(posicion);
+            reiniciarTemporizador();
+        });
+    });
+
+    /* INICIAR CARRUSEL */
+
+    mostrarFotografia(0);
+    reiniciarTemporizador();
 });
