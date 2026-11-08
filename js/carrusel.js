@@ -18,6 +18,10 @@ document.addEventListener("DOMContentLoaded", () => {
         "#vista-inicio .carrusel-punto"
     );
 
+    const botonPausa = document.querySelector(
+        "#vista-inicio .carrusel-pausa"
+    );
+
     if (!imagen) return;
 
     const fotografias = [
@@ -47,8 +51,10 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 
     let indice = 0;
+    let temporizador;
+    let pausado = false;
 
-    /* ACTUALIZAR FOTOGRAFÍA E INDICADORES */
+    /* MOSTRAR FOTOGRAFÍA E INDICADOR ACTIVO */
 
     function mostrarFotografia(nuevoIndice) {
         indice = (
@@ -66,12 +72,12 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     }
 
-    /* CAMBIO AUTOMÁTICO CADA 2,5 SEGUNDOS */
-
-    let temporizador;
+    /* CONTROLAR EL CAMBIO AUTOMÁTICO */
 
     function reiniciarTemporizador() {
         clearInterval(temporizador);
+
+        if (pausado) return;
 
         temporizador = setInterval(() => {
             mostrarFotografia(indice + 1);
@@ -102,6 +108,36 @@ document.addEventListener("DOMContentLoaded", () => {
             reiniciarTemporizador();
         });
     });
+
+    /* BOTÓN PAUSAR / REANUDAR */
+
+    if (botonPausa) {
+        botonPausa.addEventListener("click", () => {
+            pausado = !pausado;
+
+            botonPausa.textContent = pausado
+                ? "Reanudar"
+                : "Pausar";
+
+            botonPausa.setAttribute(
+                "aria-label",
+                pausado ? "Reanudar carrusel" : "Pausar carrusel"
+            );
+
+            botonPausa.setAttribute(
+                "aria-pressed",
+                String(pausado)
+            );
+
+            imagen.style.animation = pausado ? "none" : "";
+
+            if (pausado) {
+                imagen.style.opacity = "1";
+            }
+
+            reiniciarTemporizador();
+        });
+    }
 
     /* INICIAR CARRUSEL */
 
