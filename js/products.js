@@ -130,6 +130,7 @@ const productos = [
     category: "gorras",
     brand: "New Era",
     price: 24.99,
+    availability: "pocas",
     image: "assets/images/products/gorra-atlanta-braves-150-aniversario.webp",
     description: "Gorra Atlanta Braves con parche conmemorativo del 150.º aniversario (1871–2021).",
     sizes: ["Ajustable"],

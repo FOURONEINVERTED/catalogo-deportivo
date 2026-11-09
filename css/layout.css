@@ -1738,3 +1738,56 @@ aside[aria-label="Estado del catálogo"] p {
         margin: 0 auto;
     }
 }
+
+/* DISPONIBILIDAD EN LA FICHA DE PRODUCTO */
+
+#detalle-producto .detalle-disponibilidad {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+
+    margin: 8px 0 4px;
+
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 1.5;
+}
+
+/* PEQUEÑO INDICADOR CIRCULAR */
+
+#detalle-producto .detalle-disponibilidad::before {
+    content: "";
+    display: block;
+
+    width: 8px;
+    height: 8px;
+    flex-shrink: 0;
+
+    border-radius: 50%;
+    background-color: currentColor;
+}
+
+/* DISPONIBLE */
+
+#detalle-producto .estado-disponible {
+    color: #237347;
+}
+
+/* QUEDAN POCAS UNIDADES */
+
+#detalle-producto .estado-pocas {
+    color: #a16207;
+}
+
+/* NO DISPONIBLE */
+
+#detalle-producto .estado-agotado {
+    color: #b42318;
+}
+
+/* SEPARACIÓN CON LA DESCRIPCIÓN */
+
+#detalle-producto .detalle-disponibilidad
++ .detalle-descripcion {
+    margin-top: 16px;
+}

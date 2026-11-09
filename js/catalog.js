@@ -287,7 +287,32 @@ colores.replaceChildren(
 );
 
 
-    informacion.append(marca, precio, descripcion, tallas, colores);
+    
+/* DISPONIBILIDAD DEL PRODUCTO */
+
+const estadosDisponibilidad = {
+    disponible: "Disponible",
+    pocas: "Quedan pocas unidades",
+    agotado: "No disponible"
+};
+
+informacion.append(marca, precio);
+
+const estado = estadosDisponibilidad[producto.availability];
+
+if (estado) {
+    const disponibilidad = document.createElement("p");
+
+    disponibilidad.className =
+        "detalle-disponibilidad estado-" + producto.availability;
+
+    disponibilidad.textContent = estado;
+
+    informacion.append(disponibilidad);
+}
+
+informacion.append(descripcion, tallas, colores);
+
 
     contenedor.append(imagen, informacion);
 }
