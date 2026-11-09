@@ -1579,3 +1579,67 @@ aside[aria-label="Estado del catálogo"] p {
         line-height: 1.2;
     }
 }
+
+/* FICHA DE PRODUCTO EN IPHONE HORIZONTAL */
+
+@media (orientation: landscape)
+       and (min-width: 740px)
+       and (max-width: 1024px)
+       and (max-height: 600px) {
+
+    #detalle-producto {
+        display: grid;
+        grid-template-columns: minmax(0, 270px) minmax(0, 1fr);
+        gap: 20px;
+
+        width: 100%;
+        max-width: 760px;
+        margin-left: auto;
+        margin-right: auto;
+
+        align-items: start;
+    }
+
+    #detalle-producto .detalle-imagen {
+        display: block;
+        width: 100%;
+        max-width: 270px;
+        max-height: 300px;
+        object-fit: contain;
+        margin: 0;
+    }
+
+    #detalle-producto .detalle-informacion {
+        width: 100%;
+        min-width: 0;
+        box-sizing: border-box;
+        padding: 20px;
+        margin-top: 0;
+    }
+}
+
+/* ALINEACIÓN DE FICHA EN IPHONE HORIZONTAL */
+
+@media (orientation: landscape)
+       and (min-width: 740px)
+       and (max-width: 1024px)
+       and (max-height: 600px) {
+
+    #detalle-producto {
+        align-items: start;
+    }
+
+    #detalle-producto .detalle-imagen {
+        height: 300px;
+        max-height: 300px;
+        object-fit: contain;
+        align-self: start;
+    }
+
+    #detalle-producto .detalle-informacion {
+        min-height: 300px;
+        box-sizing: border-box;
+        align-self: start;
+        margin-top: 0;
+    }
+}

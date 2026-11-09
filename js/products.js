@@ -122,5 +122,18 @@ const productos = [
     description: "Balón de futbol para entrenamientos y actividades deportivas.",
     sizes: ["Único"],
     colors: ["Por definir"]
+},
+
+{
+    id: 11,
+    name: "Atlanta Braves — 150.º Aniversario",
+    category: "gorras",
+    brand: "New Era",
+    price: 24.99,
+    image: "assets/images/products/gorra-atlanta-braves-150-aniversario.webp",
+    description: "Gorra Atlanta Braves con parche conmemorativo del 150.º aniversario (1871–2021).",
+    sizes: ["Ajustable"],
+    colors: ["Gris", "Azul marino"]
 }
+
 ];
