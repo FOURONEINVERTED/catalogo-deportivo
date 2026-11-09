@@ -1415,3 +1415,62 @@ aside[aria-label="Estado del catálogo"] p {
     background: #fff;
     border: 1px solid #fff;
 }
+
+/* ALINEACIÓN DE LA FICHA DE PRODUCTO */
+
+#detalle-producto {
+    align-items: start;
+}
+
+#detalle-producto .detalle-informacion {
+    align-self: start;
+    margin-top: 0;
+}
+
+
+
+/* DISTRIBUCIÓN EQUILIBRADA DE LA FICHA */
+
+@media (min-width: 701px) {
+    #detalle-producto {
+        width: 100%;
+        max-width: 824px;
+
+        margin-left: auto;
+        margin-right: auto;
+
+        grid-template-columns: minmax(0, 3fr) minmax(0, 5fr);
+        gap: 24px;
+        align-items: start;
+    }
+}
+
+/* INFORMACIÓN ORGANIZADA DEL PRODUCTO */
+
+#detalle-producto .detalle-marca {
+    margin: 0 0 18px;
+    font-size: 14px;
+    color: #777777;
+}
+
+#detalle-producto .detalle-descripcion {
+    margin: 22px 0 18px;
+    font-size: 16px;
+    line-height: 1.6;
+    color: #303030;
+}
+
+#detalle-producto .detalle-tallas,
+#detalle-producto .detalle-colores {
+    margin: 0;
+    padding: 12px 0;
+    border-top: 1px solid #eeeeee;
+
+    font-size: 15px;
+    line-height: 1.5;
+    color: #555555;
+}
+
+#detalle-producto .detalle-colores {
+    padding-bottom: 0;
+}

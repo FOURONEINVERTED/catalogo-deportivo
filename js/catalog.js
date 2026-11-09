@@ -205,6 +205,7 @@ function mostrarDetalleProducto(id) {
     informacion.className = "detalle-informacion";
 
     const marca = document.createElement("p");
+    marca.className = "detalle-marca";
     marca.textContent = "Marca: " + producto.brand;
 
     const precio = document.createElement("p");
@@ -215,13 +216,30 @@ function mostrarDetalleProducto(id) {
     });
 
     const descripcion = document.createElement("p");
+    descripcion.className = "detalle-descripcion";
     descripcion.textContent = producto.description;
 
     const tallas = document.createElement("p");
-    tallas.textContent = "Tallas: " + producto.sizes.join(", ");
+    tallas.className = "detalle-tallas";
+    
+const etiquetaTallas = document.createElement("strong");
+etiquetaTallas.textContent = "Tallas: ";
+tallas.replaceChildren(
+    etiquetaTallas,
+    producto.sizes.join(", ")
+);
+
 
     const colores = document.createElement("p");
-    colores.textContent = "Colores: " + producto.colors.join(", ");
+    colores.className = "detalle-colores";
+    
+const etiquetaColores = document.createElement("strong");
+etiquetaColores.textContent = "Colores: ";
+colores.replaceChildren(
+    etiquetaColores,
+    producto.colors.join(", ")
+);
+
 
     informacion.append(marca, precio, descripcion, tallas, colores);
 
