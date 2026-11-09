@@ -201,6 +201,52 @@ function mostrarDetalleProducto(id) {
     imagen.alt = producto.name;
     imagen.className = "detalle-imagen";
 
+/* AMPLIAR FOTOGRAFÍA DEL PRODUCTO */
+
+imagen.tabIndex = 0;
+imagen.setAttribute("role", "button");
+imagen.setAttribute(
+    "aria-label",
+    "Ampliar fotografía de " + producto.name
+);
+
+function ampliarFotografia() {
+    const visor = document.createElement("dialog");
+    visor.className = "visor-producto";
+    const fotoGrande = document.createElement("img");
+    fotoGrande.src = producto.image;
+    fotoGrande.alt = producto.name;
+    fotoGrande.style.display = "block";
+    fotoGrande.style.maxWidth = "85vw";
+    fotoGrande.style.maxHeight = "80vh";
+
+    const cerrar = document.createElement("button");
+    cerrar.type = "button";
+    cerrar.textContent = "Cerrar";
+
+    cerrar.addEventListener("click", () => {
+        visor.close();
+    });
+
+    visor.append(cerrar, fotoGrande);
+    document.body.append(visor);
+
+    visor.addEventListener("close", () => {
+        visor.remove();
+    }, { once: true });
+
+    visor.showModal();
+}
+
+imagen.addEventListener("click", ampliarFotografia);
+
+imagen.addEventListener("keydown", (evento) => {
+    if (evento.key === "Enter" || evento.key === " ") {
+        evento.preventDefault();
+        ampliarFotografia();
+    }
+});
+
     const informacion = document.createElement("div");
     informacion.className = "detalle-informacion";
 
