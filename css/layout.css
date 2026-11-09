@@ -1690,3 +1690,26 @@ aside[aria-label="Estado del catálogo"] p {
         margin: 0;
     }
 }
+
+/* ALINEACIÓN DE FOTOGRAFÍA Y FICHA EN ORDENADOR */
+
+@media (min-width: 1025px) {
+
+    #detalle-producto {
+        align-items: stretch;
+    }
+
+    #detalle-producto .detalle-imagen {
+        height: 100%;
+        max-height: none;
+        object-fit: cover;
+        border-radius: 12px;
+        align-self: stretch;
+    }
+
+    #detalle-producto .detalle-informacion {
+        height: 100%;
+        box-sizing: border-box;
+        align-self: stretch;
+    }
+}
