@@ -120,7 +120,7 @@
     width: 100%;
     height: 100%;
     display: block;
-    object-fit: contain;
+    object-fit: cover;
     object-position: center;
 }
 
@@ -1711,5 +1711,30 @@ aside[aria-label="Estado del catálogo"] p {
         height: 100%;
         box-sizing: border-box;
         align-self: stretch;
+    }
+}
+
+/* VISOR DE FOTOGRAFÍAS CENTRADO EN MÓVIL */
+
+@media (max-width: 600px) {
+
+    .visor-producto {
+        box-sizing: border-box;
+        width: calc(100vw - 24px);
+        max-width: calc(100vw - 24px);
+        padding: 12px;
+        overflow-x: hidden;
+    }
+
+    .visor-producto img {
+        display: block;
+        width: auto;
+        height: auto;
+
+        max-width: 100% !important;
+        max-height: 70dvh !important;
+
+        object-fit: contain;
+        margin: 0 auto;
     }
 }
