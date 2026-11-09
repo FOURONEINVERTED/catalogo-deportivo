@@ -1269,3 +1269,149 @@ aside[aria-label="Estado del catálogo"] p {
         transition: none;
     }
 }
+
+/* ICONOS DE PAUSA Y REANUDACIÓN */
+
+#vista-inicio .carrusel-pausa {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 40px;
+    height: 40px;
+    padding: 0;
+
+    font-size: 0;
+    line-height: 0;
+}
+
+/* SÍMBOLO DE PAUSA */
+
+#vista-inicio .carrusel-pausa::before {
+    content: "";
+    display: block;
+
+    width: 14px;
+    height: 16px;
+
+    background: linear-gradient(
+        to right,
+        #fff 0 5px,
+        transparent 5px 9px,
+        #fff 9px 14px
+    );
+}
+
+/* SÍMBOLO DE REANUDAR */
+
+#vista-inicio .carrusel-pausa[aria-pressed="true"]::before {
+    width: 0;
+    height: 0;
+    margin-left: 3px;
+
+    background: none;
+
+    border-top: 8px solid transparent;
+    border-bottom: 8px solid transparent;
+    border-left: 14px solid #fff;
+}
+
+/* CONTROL MINIMALISTA DEL CARRUSEL */
+
+#vista-inicio .carrusel-pausa,
+#vista-inicio .carrusel-pausa:hover {
+    width: 36px;
+    height: 36px;
+    min-height: 36px;
+    padding: 0;
+
+    background: transparent;
+    border: none;
+    box-shadow: none;
+    color: #fff;
+}
+
+/* ICONO BLANCO DE PAUSA */
+
+#vista-inicio .carrusel-pausa::before {
+    width: 12px;
+    height: 14px;
+
+    background: linear-gradient(
+        to right,
+        #fff 0 4px,
+        transparent 4px 8px,
+        #fff 8px 12px
+    );
+
+    filter: drop-shadow(0 1px 2px rgba(0, 0, 0, 0.8));
+}
+
+/* ICONO BLANCO DE REANUDAR */
+
+#vista-inicio .carrusel-pausa[aria-pressed="true"]::before {
+    width: 0;
+    height: 0;
+    margin-left: 3px;
+
+    background: none;
+
+    border-top: 7px solid transparent;
+    border-bottom: 7px solid transparent;
+    border-left: 12px solid #fff;
+}
+
+/* FLECHAS MINIMALISTAS DEL CARRUSEL */
+
+#vista-inicio .carrusel-anterior,
+#vista-inicio .carrusel-siguiente {
+    width: 36px;
+    height: 36px;
+    padding: 0;
+
+    background: transparent;
+    border: none;
+    box-shadow: none;
+
+    color: #fff;
+    font-size: 16px;
+    font-weight: 400;
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.8);
+}
+
+#vista-inicio .carrusel-anterior:hover,
+#vista-inicio .carrusel-siguiente:hover {
+    background: transparent;
+    color: #fff;
+}
+
+#vista-inicio .carrusel-anterior:focus-visible,
+#vista-inicio .carrusel-siguiente:focus-visible {
+    outline: 2px solid #fff;
+    outline-offset: 2px;
+}
+
+/* INDICADORES MINIMALISTAS DEL CARRUSEL */
+
+#vista-inicio .carrusel-indicadores {
+    bottom: 5px;
+}
+
+/* PUNTO INACTIVO */
+
+#vista-inicio .carrusel-punto::before {
+    width: 7px;
+    height: 7px;
+    box-sizing: border-box;
+
+    background: transparent;
+    border: 1px solid #fff;
+    border-radius: 50%;
+}
+
+/* PUNTO ACTIVO */
+
+#vista-inicio .carrusel-punto.activo::before {
+    background: #fff;
+    border: 1px solid #fff;
+}
