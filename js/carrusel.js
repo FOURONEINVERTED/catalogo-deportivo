@@ -2,7 +2,7 @@
 /* CARRUSEL DE INICIO - FOUR ONE INVERTED */
 
 document.addEventListener("DOMContentLoaded", () => {
-    const imagen = document.querySelector(
+    const imagenes = document.querySelectorAll(
         "#vista-inicio .carrusel-foto"
     );
 
@@ -22,42 +22,46 @@ document.addEventListener("DOMContentLoaded", () => {
         "#vista-inicio .carrusel-pausa"
     );
 
-    if (!imagen) return;
+    if (imagenes.length !== 2) return;
 
-   
-const fotografias = [
-    {
-        src: "assets/images/products/gorra-deportiva.webp",
-        alt: "Gorra LA"
-    },
-    {
-        src: "assets/images/products/Balon-baloncesto.webp",
-        alt: "Balón de baloncesto"
-    }
-];
-
+    const fotografias = [
+        {
+            src: "assets/images/products/gorra-la-carrusel.webp",
+            alt: "Gorra LA"
+        },
+        {
+            src: "assets/images/products/gorra-ny-negra.webp",
+            alt: "Gorra NY negra"
+        }
+    ];
 
     /* PRECARGAR FOTOGRAFÍAS */
 
     fotografias.forEach((foto) => {
-        const imagenPrecargada = new Image();
-        imagenPrecargada.src = foto.src;
+        const precarga = new Image();
+        precarga.src = foto.src;
     });
 
     let indice = 0;
+    let capaActiva = 0;
     let temporizador;
     let pausado = false;
 
-    /* MOSTRAR FOTOGRAFÍA E INDICADOR ACTIVO */
+    /* PREPARAR LAS DOS CAPAS */
 
-    function mostrarFotografia(nuevoIndice) {
-        indice = (
-            nuevoIndice + fotografias.length
-        ) % fotografias.length;
+    imagenes[0].src = fotografias[0].src;
+    imagenes[0].alt = fotografias[0].alt;
+    imagenes[0].classList.remove("carrusel-foto-oculta");
+    imagenes[0].removeAttribute("aria-hidden");
 
-        imagen.src = fotografias[indice].src;
-        imagen.alt = fotografias[indice].alt;
+    imagenes[1].src = fotografias[1].src;
+    imagenes[1].alt = fotografias[1].alt;
+    imagenes[1].classList.add("carrusel-foto-oculta");
+    imagenes[1].setAttribute("aria-hidden", "true");
 
+    /* ACTUALIZAR INDICADORES */
+
+    function actualizarIndicadores() {
         puntos.forEach((punto, posicion) => {
             const activo = posicion === indice;
 
@@ -66,7 +70,35 @@ const fotografias = [
         });
     }
 
-    /* CONTROLAR EL CAMBIO AUTOMÁTICO */
+    /* CAMBIAR FOTOGRAFÍA CON FUNDIDO CRUZADO */
+
+    function mostrarFotografia(nuevoIndice) {
+        const siguienteIndice = (
+            nuevoIndice + fotografias.length
+        ) % fotografias.length;
+
+        if (siguienteIndice === indice) return;
+
+        const saliente = imagenes[capaActiva];
+        const nuevaCapa = 1 - capaActiva;
+        const entrante = imagenes[nuevaCapa];
+
+        entrante.src = fotografias[siguienteIndice].src;
+        entrante.alt = fotografias[siguienteIndice].alt;
+
+        entrante.removeAttribute("aria-hidden");
+        saliente.setAttribute("aria-hidden", "true");
+
+        entrante.classList.remove("carrusel-foto-oculta");
+        saliente.classList.add("carrusel-foto-oculta");
+
+        indice = siguienteIndice;
+        capaActiva = nuevaCapa;
+
+        actualizarIndicadores();
+    }
+
+    /* CAMBIO AUTOMÁTICO CADA 2,5 SEGUNDOS */
 
     function reiniciarTemporizador() {
         clearInterval(temporizador);
@@ -103,7 +135,7 @@ const fotografias = [
         });
     });
 
-    /* BOTÓN PAUSAR / REANUDAR */
+    /* PAUSAR Y REANUDAR */
 
     if (botonPausa) {
         botonPausa.addEventListener("click", () => {
@@ -123,18 +155,12 @@ const fotografias = [
                 String(pausado)
             );
 
-            imagen.style.animation = pausado ? "none" : "";
-
-            if (pausado) {
-                imagen.style.opacity = "1";
-            }
-
             reiniciarTemporizador();
         });
     }
 
     /* INICIAR CARRUSEL */
 
-    mostrarFotografia(0);
+    actualizarIndicadores();
     reiniciarTemporizador();
 });

@@ -1064,7 +1064,7 @@ aside[aria-label="Estado del catálogo"] p {
     height: 100%;
     object-fit: cover;
     object-position: center;
-    filter: grayscale(100%) contrast(1.35) brightness(1.05);
+    filter: none;
 
 }
 
@@ -1237,4 +1237,35 @@ aside[aria-label="Estado del catálogo"] p {
 #vista-inicio .carrusel-pausa:focus-visible {
     outline: 2px solid #fff;
     outline-offset: 3px;
+}
+
+/* PREPARAR TRANSICIÓN CINEMATOGRÁFICA DEL CARRUSEL */
+
+#vista-inicio .inicio-carrusel {
+    position: relative;
+}
+
+#vista-inicio .carrusel-foto {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+    filter: none;
+
+    opacity: 1;
+    animation: none;
+    transition: opacity 0.8s ease-in-out;
+}
+
+#vista-inicio .carrusel-foto.carrusel-foto-oculta {
+    opacity: 0;
+    pointer-events: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    #vista-inicio .carrusel-foto {
+        transition: none;
+    }
 }
