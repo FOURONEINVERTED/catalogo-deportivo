@@ -125,3 +125,42 @@ window.addEventListener("hashchange", () => {
         }
     });
 });
+
+/* RECORDAR LA POSICIÓN AL ABRIR UNA FICHA */
+
+let posicionAntesDeFicha = null;
+let rutaAntesDeFicha = null;
+
+document.addEventListener("click", (evento) => {
+    const enlaceProducto = evento.target.closest(
+        'a[href^="#/producto/"]'
+    );
+
+    if (!enlaceProducto) return;
+
+    posicionAntesDeFicha = window.scrollY;
+    rutaAntesDeFicha = window.location.hash;
+});
+
+/* RECUPERAR LA POSICIÓN AL VOLVER */
+
+window.addEventListener("hashchange", () => {
+    if (
+        posicionAntesDeFicha === null ||
+        window.location.hash !== rutaAntesDeFicha
+    ) {
+        return;
+    }
+
+    requestAnimationFrame(() => {
+        requestAnimationFrame(() => {
+            window.scrollTo({
+                top: posicionAntesDeFicha,
+                behavior: "instant"
+            });
+
+            posicionAntesDeFicha = null;
+            rutaAntesDeFicha = null;
+        });
+    });
+});
