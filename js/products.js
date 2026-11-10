@@ -128,6 +128,7 @@ const productos = [
     id: 11,
     name: "Atlanta Braves — 150.º Aniversario",
     category: "gorras",
+    team: "atlanta-braves",
     brand: "New Era",
     price: 24.99,
     availability: "pocas",

@@ -1791,3 +1791,119 @@ aside[aria-label="Estado del catálogo"] p {
 + .detalle-descripcion {
     margin-top: 16px;
 }
+
+/* PRESENTACIÓN DE CADA EQUIPO MLB */
+
+#equipos-mlb .equipo-mlb {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 8px;
+
+    flex: 0 0 110px;
+    text-align: center;
+    scroll-snap-align: start;
+}
+
+/* LOGOTIPO DENTRO DE UN CÍRCULO */
+
+#equipos-mlb .equipo-mlb img {
+    display: block;
+    width: 64px;
+    height: 64px;
+    box-sizing: border-box;
+
+    padding: 12px;
+    border-radius: 50%;
+    background-color: #f0f1f3;
+
+    object-fit: contain;
+}
+
+/* NOMBRE DEL EQUIPO */
+
+#equipos-mlb .equipo-mlb span {
+    font-size: 12px;
+    line-height: 1.4;
+    color: #333333;
+}
+
+/* CÍRCULO DEL LOGOTIPO MLB */
+
+#equipos-mlb .equipo-mlb-logo {
+    width: 68px;
+    height: 68px;
+    padding: 8px;
+    box-sizing: border-box;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background-color: #f0f1f3;
+    border-radius: 50%;
+}
+
+/* LOGOTIPO COMPLETO Y CENTRADO */
+
+#equipos-mlb .equipo-mlb-logo img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    padding: 0;
+
+    object-fit: contain;
+    object-position: center;
+
+    border-radius: 0;
+    background: transparent;
+}
+
+/* ENLACES DE LOS EQUIPOS MLB */
+
+#equipos-mlb a.equipo-mlb {
+    color: inherit;
+    text-decoration: none;
+    cursor: pointer;
+    border-radius: 12px;
+}
+
+
+/* EFECTO SOLO AL PASAR EL RATÓN SOBRE EL CÍRCULO */
+
+#equipos-mlb .equipo-mlb-logo:hover {
+    background-color: #e5e7eb;
+}
+
+
+/* ACCESIBILIDAD CON TECLADO */
+
+#equipos-mlb a.equipo-mlb:focus-visible {
+    outline: 2px solid #111111;
+    outline-offset: 5px;
+}
+
+/* TRANSICIÓN SUAVE DEL CÍRCULO MLB */
+
+#equipos-mlb .equipo-mlb-logo {
+    transition: background-color 0.25s ease-in-out;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    #equipos-mlb .equipo-mlb-logo {
+        transition: none;
+    }
+}
+
+/* COLOR ORIGINAL AL PASAR POR EL ÁREA DEL ENLACE */
+
+#equipos-mlb a.equipo-mlb:hover .equipo-mlb-logo {
+    background-color: #f0f1f3;
+}
+
+/* CAMBIAR COLOR SOLO SOBRE EL CÍRCULO */
+
+#equipos-mlb a.equipo-mlb .equipo-mlb-logo:hover {
+    background-color: #e5e7eb;
+}

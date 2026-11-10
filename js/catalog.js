@@ -114,7 +114,51 @@ function mostrarProductosCategoria(categoria) {
         return;
     }
 
-    const productosFiltrados = obtenerProductosPorCategoria(categoria);
+/* MOSTRAR EQUIPOS MLB SOLO EN GORRAS */
+
+const seccionMLB = document.getElementById("equipos-mlb");
+
+if (seccionMLB) {
+    seccionMLB.hidden = categoria !== "gorras";
+}
+
+    
+/* FILTRAR GORRAS POR EQUIPO MLB */
+
+const equipoSeleccionado =
+    categoria === "gorras"
+        ? window.location.hash.split("/")[3]
+        : null;
+
+const productosFiltrados = obtenerProductosPorCategoria(categoria)
+    .filter((producto) =>
+        !equipoSeleccionado || producto.team === equipoSeleccionado
+    );
+
+/* OCULTAR EL TÍTULO DUPLICADO AL VER UN EQUIPO MLB */
+
+const tituloCategoriaMLB = document.getElementById("titulo-categoria");
+
+if (tituloCategoriaMLB) {
+    tituloCategoriaMLB.style.display = equipoSeleccionado ? "none" : "";
+}
+
+/* ENLACE PARA VOLVER DESDE UN EQUIPO MLB */
+
+const enlaceVolverCategoria = document.querySelector(
+    "#vista-categoria-detalle .enlace-volver-categorias"
+);
+
+if (enlaceVolverCategoria) {
+    enlaceVolverCategoria.href = equipoSeleccionado
+        ? "#/categoria/gorras"
+        : "#/categorias";
+
+    enlaceVolverCategoria.textContent = equipoSeleccionado
+        ? "Volver a la categoría"
+        : "Volver a categorías";
+}
+
 
     contenedor.innerHTML = "";
     

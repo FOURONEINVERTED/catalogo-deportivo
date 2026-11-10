@@ -43,7 +43,9 @@ function mostrarVista() {
     }
 
     // MOSTRAR LA VISTA SELECCIONADA
-    document.querySelectorAll("main section").forEach((seccion) => {
+    
+    document.querySelectorAll("main.main-content > section").forEach((seccion) => {
+
         seccion.hidden = seccion.id !== vistaSeleccionada;
     });
 
