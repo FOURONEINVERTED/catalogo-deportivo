@@ -1907,3 +1907,22 @@ aside[aria-label="Estado del catálogo"] p {
 #equipos-mlb a.equipo-mlb .equipo-mlb-logo:hover {
     background-color: #e5e7eb;
 }
+
+/* EQUIPOS MLB EN FILA HORIZONTAL */
+
+#equipos-mlb .equipos-mlb-lista {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-items: flex-start;
+    gap: 20px;
+    overflow-x: auto;
+    max-width: 100%;
+    padding: 10px 0 15px;
+}
+
+#equipos-mlb .equipos-mlb-lista > .equipo-mlb {
+    flex: 0 0 110px;
+    width: 110px;
+    text-align: center;
+}
