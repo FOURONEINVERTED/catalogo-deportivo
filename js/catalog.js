@@ -130,6 +130,56 @@ const equipoSeleccionado =
         ? window.location.hash.split("/")[3]
         : null;
 
+
+
+/* =========================================
+   MLB - CENTRAR EL EQUIPO SELECCIONADO
+   PASO 1085
+   ========================================= */
+
+if (seccionMLB) {
+
+    const logosMLB = seccionMLB.querySelectorAll("a.equipo-mlb");
+
+    const listaMLB = seccionMLB.querySelector(".equipos-mlb-lista");
+
+    logosMLB.forEach((logo) => {
+
+        const equipoDelLogo = logo.getAttribute("href").split("/").pop();
+
+        if (equipoSeleccionado && equipoDelLogo !== equipoSeleccionado) {
+
+            logo.style.display = "none";
+
+        } else {
+
+            logo.style.removeProperty("display");
+
+        }
+
+    });
+
+    /* CENTRAR EL LOGO SELECCIONADO */
+
+    if (listaMLB) {
+
+        if (equipoSeleccionado) {
+
+            listaMLB.style.justifyContent = "center";
+            listaMLB.scrollLeft = 0;
+
+        } else {
+
+            listaMLB.style.removeProperty("justify-content");
+
+        }
+
+    }
+
+}
+
+
+
 const productosFiltrados = obtenerProductosPorCategoria(categoria)
     .filter((producto) =>
         !equipoSeleccionado || producto.team === equipoSeleccionado
@@ -361,3 +411,147 @@ informacion.append(descripcion, tallas, colores);
     contenedor.append(imagen, informacion);
 }
 
+
+
+/* =========================================
+   MLB - SELECTOR DE EQUIPOS PARA MOVILES
+   PASO 1088
+   ========================================= */
+
+(function iniciarSelectorMLBMovil() {
+
+    function prepararSelector() {
+
+        const seccion = document.getElementById("equipos-mlb");
+
+        if (!seccion) return;
+
+        const equipos = [
+            ...seccion.querySelectorAll("a.equipo-mlb")
+        ];
+
+        if (!equipos.length) return;
+
+        if (document.getElementById("mlb-abrir-selector")) return;
+
+        /* BOTON PARA ABRIR LOS 30 EQUIPOS */
+
+        const boton = document.createElement("button");
+
+        boton.type = "button";
+        boton.id = "mlb-abrir-selector";
+        boton.textContent = "Equipos";
+
+        seccion.appendChild(boton);
+
+        /* CREAR VENTANA */
+
+        const ventana = document.createElement("dialog");
+
+        ventana.id = "mlb-selector-movil";
+
+        ventana.setAttribute(
+            "aria-labelledby",
+            "mlb-selector-titulo"
+        );
+
+        ventana.innerHTML = `
+            <div class="mlb-selector-cabecera">
+                <h2 id="mlb-selector-titulo">
+                    Selecciona tu equipo
+                </h2>
+
+                <button
+                    type="button"
+                    class="mlb-selector-cerrar"
+                    aria-label="Cerrar selector"
+                >×</button>
+            </div>
+
+            <div class="mlb-selector-cuadricula"></div>
+        `;
+
+        const cuadricula = ventana.querySelector(
+            ".mlb-selector-cuadricula"
+        );
+
+        /* UTILIZAR LOS 30 LOGOTIPOS EXISTENTES */
+
+        
+/* UTILIZAR LOS LOGOTIPOS CON SUS AJUSTES ORIGINALES */
+
+equipos.forEach((equipo) => {
+
+    const enlace = equipo.cloneNode(true);
+
+    enlace.classList.add("mlb-selector-equipo");
+
+    const contenedorImagen = enlace.querySelector(
+        ".equipo-mlb-logo"
+    );
+
+    if (contenedorImagen) {
+        contenedorImagen.classList.add(
+            "mlb-selector-imagen"
+        );
+    }
+
+    const imagen = enlace.querySelector("img");
+
+    if (imagen) {
+        imagen.removeAttribute("width");
+        imagen.removeAttribute("height");
+        imagen.style.removeProperty("transform");
+    }
+
+    enlace.addEventListener("click", () => {
+        ventana.close();
+    });
+
+    cuadricula.appendChild(enlace);
+
+});
+
+
+        /* ABRIR VENTANA */
+
+        boton.addEventListener("click", () => {
+
+            if (window.matchMedia("(max-width: 480px)").matches) {
+                ventana.showModal();
+            }
+
+        });
+
+        /* CERRAR VENTANA */
+
+        ventana.querySelector(".mlb-selector-cerrar")
+            .addEventListener("click", () => {
+                ventana.close();
+            });
+
+        ventana.addEventListener("click", (evento) => {
+
+            if (evento.target === ventana) {
+                ventana.close();
+            }
+
+        });
+
+        seccion.appendChild(ventana);
+    }
+
+    if (document.readyState === "loading") {
+
+        document.addEventListener(
+            "DOMContentLoaded",
+            prepararSelector
+        );
+
+    } else {
+
+        prepararSelector();
+
+    }
+
+})();
