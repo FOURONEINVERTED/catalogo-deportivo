@@ -1926,3 +1926,466 @@ aside[aria-label="Estado del catálogo"] p {
     width: 110px;
     text-align: center;
 }
+
+/* CARRUSEL MLB - DISTRIBUCIÓN DE EQUIPOS */
+
+#equipos-mlb .equipos-mlb-lista {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-items: flex-start;
+    gap: 10px;
+    overflow-x: auto;
+    max-width: 100%;
+    scroll-snap-type: x proximity;
+}
+
+/* CADA EQUIPO */
+
+#equipos-mlb .equipos-mlb-lista > .equipo-mlb {
+    flex: 0 0 94px;
+    width: 94px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    scroll-snap-align: start;
+}
+
+/* CÍRCULOS DE LOS LOGOTIPOS */
+
+#equipos-mlb .equipo-mlb-logo {
+    width: 78px;
+    height: 78px;
+    flex-shrink: 0;
+    border-radius: 50%;
+}
+
+/* NOMBRES DE LOS EQUIPOS */
+
+#equipos-mlb .equipo-mlb > span {
+    display: block;
+    width: 100%;
+    text-align: center;
+    font-size: 14px;
+    line-height: 1.4;
+    margin-top: 8px;
+}
+
+/* CARRUSEL MLB: FLECHA SOBRE LA FILA */
+
+#equipos-mlb {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+}
+
+/* RESPETAR LAS CATEGORÍAS DONDE NO DEBE APARECER */
+
+#equipos-mlb[hidden] {
+    display: none;
+}
+
+/* FILA HORIZONTAL SIN BARRA VISIBLE */
+
+#equipos-mlb .equipos-mlb-lista {
+    grid-column: 1;
+    grid-row: 2;
+    min-width: 0;
+    scrollbar-width: none;
+}
+
+#equipos-mlb .equipos-mlb-lista::-webkit-scrollbar {
+    display: none;
+}
+
+/* FLECHA DERECHA */
+
+#equipos-mlb .equipos-mlb-siguiente {
+    grid-column: 1;
+    grid-row: 2;
+    justify-self: end;
+    align-self: start;
+    position: relative;
+    z-index: 2;
+
+    margin-top: 24px;
+    width: 38px;
+    height: 42px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border: none;
+    border-radius: 8px;
+    background: #f5f5f5;
+    color: #111111;
+
+    font-size: 30px;
+    cursor: pointer;
+}
+
+/* CARRUSEL MLB - FLECHA IZQUIERDA */
+
+#equipos-mlb .equipos-mlb-anterior {
+    grid-column: 1;
+    grid-row: 2;
+
+    justify-self: start;
+    align-self: start;
+
+    position: relative;
+    z-index: 2;
+
+    margin-top: 24px;
+
+    width: 38px;
+    height: 42px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border: none;
+    border-radius: 8px;
+
+    background: #f5f5f5;
+    color: #111111;
+
+    font-size: 30px;
+    cursor: pointer;
+}
+
+/* FLECHAS MLB SIN FONDO NI RECUADRO */
+
+#equipos-mlb .equipos-mlb-anterior,
+#equipos-mlb .equipos-mlb-siguiente {
+    background: transparent;
+    border: none;
+    box-shadow: none;
+    border-radius: 0;
+    padding: 0;
+    color: #111111;
+}
+
+/* MANTENER EL FONDO TRANSPARENTE AL PASAR EL RATÓN */
+
+#equipos-mlb .equipos-mlb-anterior:hover,
+#equipos-mlb .equipos-mlb-siguiente:hover {
+    background: transparent;
+}
+
+
+/* MLB - DEGRADADO SUAVE EN AMBOS EXTREMOS */
+
+#equipos-mlb .equipos-mlb-lista {
+    scroll-behavior: smooth;
+
+    -webkit-mask-image: linear-gradient(
+        to right,
+        transparent 0%,
+        black 105px,
+        black calc(100% - 105px),
+        transparent 100%
+    );
+
+    mask-image: linear-gradient(
+        to right,
+        transparent 0%,
+        black 105px,
+        black calc(100% - 105px),
+        transparent 100%
+    );
+}
+
+/* DEGRADADO ADAPTADO A MÓVILES */
+
+@media (max-width: 480px) {
+    #equipos-mlb .equipos-mlb-lista {
+        -webkit-mask-image: linear-gradient(
+            to right,
+            transparent 0%,
+            black 48px,
+            black calc(100% - 48px),
+            transparent 100%
+        );
+
+        mask-image: linear-gradient(
+            to right,
+            transparent 0%,
+            black 48px,
+            black calc(100% - 48px),
+            transparent 100%
+        );
+    }
+}
+
+
+/* MLB - FLECHAS SEPARADAS DE LOS LOGOTIPOS */
+
+/* Flecha izquierda */
+#equipos-mlb .equipos-mlb-anterior {
+    transform: translateX(0);
+}
+
+/* Flecha derecha */
+#equipos-mlb .equipos-mlb-siguiente {
+    transform: translateX(0);
+}
+
+/* Flechas sin fondo ni recuadro */
+#equipos-mlb .equipos-mlb-anterior,
+#equipos-mlb .equipos-mlb-siguiente {
+    background: transparent;
+    border: none;
+    box-shadow: none;
+    border-radius: 0;
+    color: #111111;
+    padding: 0;
+}
+
+/* Degradado más visible en ambos extremos */
+#equipos-mlb .equipos-mlb-lista {
+    -webkit-mask-image: linear-gradient(
+        to right,
+        transparent 0%,
+        black 56px,
+        black calc(100% - 56px),
+        transparent 100%
+    );
+
+    mask-image: linear-gradient(
+        to right,
+        transparent 0%,
+        black 56px,
+        black calc(100% - 56px),
+        transparent 100%
+    );
+}
+
+/* MLB - MAYOR SEPARACIÓN ENTRE FLECHAS Y LOGOTIPOS */
+
+#equipos-mlb .equipos-mlb-lista {
+    width: calc(100% - 128px);
+    min-width: 0;
+    justify-self: center;
+}
+
+/* CONSERVAR LA SEPARACIÓN EN MÓVILES */
+
+@media (max-width: 480px) {
+    #equipos-mlb .equipos-mlb-lista {
+        width: calc(100% - 112px);
+    }
+}
+
+/* MLB - TAMAÑO UNIFORME DE LOS LOGOTIPOS */
+
+#equipos-mlb .equipo-mlb-logo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+    overflow: hidden;
+    border-radius: 50%;
+}
+
+/* MISMO ESPACIO PARA LOS 30 LOGOTIPOS */
+
+#equipos-mlb .equipo-mlb-logo img {
+    display: block;
+    width: 58px;
+    height: 58px;
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+    flex-shrink: 0;
+}
+
+/* AJUSTE PARA PANTALLAS MÓVILES */
+
+@media (max-width: 480px) {
+    #equipos-mlb .equipo-mlb-logo img {
+        width: 48px;
+        height: 48px;
+    }
+}
+
+
+
+/* MLB - AJUSTES INDIVIDUALES DE LOGOTIPOS */
+
+/* NEW YORK METS */
+#equipos-mlb .equipo-mlb-logo img[src$="new-york-mets-logo.png"] {
+    transform: scale(1.20);
+}
+
+/* BALTIMORE ORIOLES - AJUSTE VISUAL */
+
+#equipos-mlb .equipo-mlb-logo img[src$="baltimore-orioles-logo.png"] {
+    transform: scale(1.20);
+}
+
+
+
+/* ========================================
+   MLB - AJUSTE DE 11 LOGOTIPOS PEQUEÑOS
+   ======================================== */
+
+#equipos-mlb a.equipo-mlb:is(
+    [href*="miami-marlins"],
+    [href*="boston-red-sox"],
+    [href*="chicago-cubs"],
+    [href*="detroit-tigers"],
+    [href*="philadelphia-phillies"],
+    [href*="los-angeles-angels"],
+    [href*="minnesota-twins"],
+    [href*="los-angeles-dodgers"],
+    [href*="milwaukee-brewers"],
+    [href*="san-francisco-giants"],
+    [href*="toronto-blue-jays"]
+) .equipo-mlb-logo img {
+    transform: scale(1.20);
+}
+
+
+
+/* ========================================
+   MLB - AJUSTE INDIVIDUAL TORONTO BLUE JAYS
+   ======================================== */
+
+#equipos-mlb a.equipo-mlb[href*="toronto-blue-jays"] .equipo-mlb-logo img {
+    transform: scale(1.70);
+}
+
+
+
+/* =========================================
+   MLB - AJUSTES FINALES DE TAMAÑO
+   PASO 1060
+   ========================================= */
+
+/* PITTSBURGH PIRATES - AUMENTAR */
+#equipos-mlb a.equipo-mlb[href*="pittsburgh-pirates"] .equipo-mlb-logo img {
+    transform: scale(1.10);
+}
+
+/* TEXAS RANGERS - REDUCIR */
+#equipos-mlb a.equipo-mlb[href*="texas-rangers"] .equipo-mlb-logo img {
+    transform: scale(0.90);
+}
+
+/* TORONTO BLUE JAYS - AUMENTAR */
+#equipos-mlb a.equipo-mlb[href*="toronto-blue-jays"] .equipo-mlb-logo img {
+    transform: scale(2.04);
+}
+
+
+
+/* =========================================
+   MLB - AJUSTES VISUALES PASO 1061
+   ========================================= */
+
+/* DETROIT TIGERS - AUMENTAR */
+#equipos-mlb a.equipo-mlb[href*="detroit-tigers"] .equipo-mlb-logo img {
+    transform: scale(1.70);
+}
+
+/* SEATTLE MARINERS - REDUCIR */
+#equipos-mlb a.equipo-mlb[href*="seattle-mariners"] .equipo-mlb-logo img {
+    transform: scale(0.93);
+}
+
+/* LOS ANGELES ANGELS - AUMENTAR */
+#equipos-mlb a.equipo-mlb[href*="los-angeles-angels"] .equipo-mlb-logo img {
+    transform: scale(1.80);
+}
+
+/* MINNESOTA TWINS - AUMENTAR */
+#equipos-mlb a.equipo-mlb[href*="minnesota-twins"] .equipo-mlb-logo img {
+    transform: scale(1.65);
+}
+
+/* PITTSBURGH PIRATES - REDUCIR */
+#equipos-mlb a.equipo-mlb[href*="pittsburgh-pirates"] .equipo-mlb-logo img {
+    transform: scale(0.92);
+}
+
+
+
+/* =========================================
+   MLB - AJUSTES DE UNIFORMIDAD PASO 1062
+   ========================================= */
+
+/* SAN DIEGO PADRES - REDUCIR UN POCO */
+#equipos-mlb a.equipo-mlb[href*="san-diego-padres"] .equipo-mlb-logo img {
+    transform: scale(0.94);
+}
+
+/* MINNESOTA TWINS - AUMENTAR UN POCO */
+#equipos-mlb a.equipo-mlb[href*="minnesota-twins"] .equipo-mlb-logo img {
+    transform: scale(1.82);
+}
+
+/* PITTSBURGH PIRATES - REDUCIR UN POCO */
+#equipos-mlb a.equipo-mlb[href*="pittsburgh-pirates"] .equipo-mlb-logo img {
+    transform: scale(0.86);
+}
+
+
+
+/* =========================================
+   MLB - AJUSTES VISUALES PASO 1063
+   ========================================= */
+
+/* KANSAS CITY ROYALS - REDUCIR */
+#equipos-mlb a.equipo-mlb[href*="kansas-city-royals"] .equipo-mlb-logo img {
+    transform: scale(0.90);
+}
+
+/* NEW YORK METS - AUMENTAR */
+#equipos-mlb a.equipo-mlb[href*="new-york-mets"] .equipo-mlb-logo img {
+    transform: scale(1.50);
+}
+
+/* BOSTON RED SOX - AUMENTAR */
+#equipos-mlb a.equipo-mlb[href*="boston-red-sox"] .equipo-mlb-logo img {
+    transform: scale(1.35);
+}
+
+/* CHICAGO CUBS - AUMENTAR */
+#equipos-mlb a.equipo-mlb[href*="chicago-cubs"] .equipo-mlb-logo img {
+    transform: scale(1.65);
+}
+
+
+
+/* =========================================
+   MLB - AJUSTES VISUALES PASO 1064
+   ========================================= */
+
+/* BALTIMORE ORIOLES - AUMENTAR */
+#equipos-mlb a.equipo-mlb[href*="baltimore-orioles"] .equipo-mlb-logo img {
+    transform: scale(1.35);
+}
+
+/* CHICAGO CUBS - AUMENTAR */
+#equipos-mlb a.equipo-mlb[href*="chicago-cubs"] .equipo-mlb-logo img {
+    transform: scale(1.90);
+}
+
+
+
+/* =========================================
+   MLB - AJUSTES VISUALES PASO 1066
+   ========================================= */
+
+/* ATHLETICS - REDUCIR LIGERAMENTE */
+#equipos-mlb a.equipo-mlb[href*="athletics"] .equipo-mlb-logo img {
+    transform: scale(0.95);
+}
+
+/* MIAMI MARLINS - AUMENTAR LIGERAMENTE */
+#equipos-mlb a.equipo-mlb[href*="miami-marlins"] .equipo-mlb-logo img {
+    transform: scale(1.32);
+}

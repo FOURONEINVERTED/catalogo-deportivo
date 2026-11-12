@@ -726,6 +726,26 @@
 
     </div>
 
+<!-- FLECHA PARA RETROCEDER POR LOS EQUIPOS MLB -->
+<button
+    type="button"
+    class="equipos-mlb-anterior"
+    aria-label="Ver los equipos MLB anteriores"
+    onclick="document.querySelector('#equipos-mlb .equipos-mlb-lista').scrollBy({ left: -210, behavior: 'smooth' })"
+>
+    &#8249;
+</button>
+
+<!-- FLECHA PARA AVANZAR POR LOS EQUIPOS MLB -->
+<button
+    type="button"
+    class="equipos-mlb-siguiente"
+    aria-label="Ver los siguientes equipos MLB"
+    onclick="document.querySelector('#equipos-mlb .equipos-mlb-lista').scrollBy({ left: 210, behavior: 'smooth' })"
+>
+    &#8250;
+</button>
+
 </section> <!-- Cierre de equipos-mlb -->
 
 <div id="productos-categoria" class="productos-grid">
