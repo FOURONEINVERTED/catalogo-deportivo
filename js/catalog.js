@@ -131,6 +131,66 @@ const equipoSeleccionado =
         : null;
 
 
+/* =========================================
+   MLB - CABECERA DINAMICA POR EQUIPO
+   PASO 1108
+   ========================================= */
+
+const paginaEquipoMLB = document.getElementById(
+    "mlb-pagina-equipo"
+);
+
+if (paginaEquipoMLB) {
+
+    const enlacesMLB = seccionMLB
+        ? [...seccionMLB.querySelectorAll("a.equipo-mlb")]
+        : [];
+
+    const enlaceEquipo = enlacesMLB.find((enlace) => {
+        return enlace.getAttribute("href") ===
+            `#/categoria/gorras/${equipoSeleccionado}`;
+    });
+
+    const nombreEquipo = enlaceEquipo
+        ?.querySelector("span")
+        ?.textContent.trim();
+
+    if (equipoSeleccionado && nombreEquipo) {
+
+        /* MOSTRAR CABECERA DEL EQUIPO */
+
+        paginaEquipoMLB.hidden = false;
+
+        /* CAMBIAR TITULO */
+
+        const tituloEquipo = document.getElementById(
+            "mlb-titulo-equipo"
+        );
+
+        if (tituloEquipo) {
+            tituloEquipo.textContent =
+                `Gorras ${nombreEquipo}`;
+        }
+
+        /* ACTUALIZAR RUTA DE NAVEGACION */
+
+        const nombreRuta = document.getElementById(
+            "mlb-nombre-ruta"
+        );
+
+        if (nombreRuta) {
+            nombreRuta.textContent = nombreEquipo;
+        }
+
+    } else {
+
+        /* OCULTAR CABECERA AL VOLVER A GORRAS */
+
+        paginaEquipoMLB.hidden = true;
+
+    }
+}
+
 
 /* =========================================
    MLB - CENTRAR EL EQUIPO SELECCIONADO
@@ -179,11 +239,155 @@ if (seccionMLB) {
 }
 
 
-
-const productosFiltrados = obtenerProductosPorCategoria(categoria)
+let productosFiltrados = obtenerProductosPorCategoria(categoria)
     .filter((producto) =>
         !equipoSeleccionado || producto.team === equipoSeleccionado
     );
+
+
+/* =========================================
+   FOURONE WEB 2.0
+   FILTROS FUNCIONALES MLB
+   PASO 1124
+   ========================================= */
+
+if (categoria === "gorras" && equipoSeleccionado) {
+
+    const panel = document.querySelector(
+        ".mlb-catalogo-filtros"
+    );
+
+    const talla = document.getElementById("mlb-filtro-talla");
+    const marca = document.getElementById("mlb-filtro-marca");
+    const color = document.getElementById("mlb-filtro-color");
+    const precio = document.getElementById("mlb-filtro-precio");
+    const precioValor = document.getElementById("mlb-precio-valor");
+    const limpiar = document.getElementById("mlb-limpiar-filtros");
+
+    if (panel && talla && marca && color &&
+        precio && precioValor && limpiar) {
+
+        const maximo = Math.max(
+            1,
+            ...productosFiltrados.map(
+                p => Math.ceil(Number(p.price) || 0)
+            )
+        );
+
+        /* ACTUALIZAR OPCIONES DISPONIBLES */
+
+        function rellenarOpciones(select, valores) {
+
+            const anterior = select.value;
+
+            select.length = 1;
+
+            [...new Set(valores.filter(Boolean))]
+                .sort((a, b) => a.localeCompare(b, "es"))
+                .forEach(valor => {
+
+                    const opcion = document.createElement("option");
+
+                    opcion.value = valor;
+                    opcion.textContent = valor;
+
+                    select.appendChild(opcion);
+                });
+
+            select.value = anterior;
+        }
+
+        rellenarOpciones(
+            talla,
+            productosFiltrados.flatMap(p => p.sizes || [])
+        );
+
+        rellenarOpciones(
+            marca,
+            productosFiltrados.map(p => p.brand)
+        );
+
+        rellenarOpciones(
+            color,
+            productosFiltrados.flatMap(p => p.colors || [])
+        );
+
+        /* CONFIGURAR PRECIO */
+
+        precio.max = maximo;
+
+        /* REINICIAR FILTROS AL CAMBIAR DE EQUIPO */
+
+        if (panel.dataset.equipoActual !== equipoSeleccionado) {
+
+            talla.value = "";
+            marca.value = "";
+            color.value = "";
+            precio.value = maximo;
+
+            panel.dataset.equipoActual = equipoSeleccionado;
+
+        } else {
+
+            precio.value = Math.min(
+                Number(precio.value),
+                maximo
+            );
+        }
+
+        precioValor.textContent = 
+            Number(precio.value).toLocaleString("es-ES") + " €";
+
+        /* APLICAR FILTROS SELECCIONADOS */
+
+        productosFiltrados = productosFiltrados.filter(p => {
+
+            const coincideTalla =
+                !talla.value ||
+                (p.sizes || []).includes(talla.value);
+
+            const coincideMarca =
+                !marca.value ||
+                p.brand === marca.value;
+
+            const coincideColor =
+                !color.value ||
+                (p.colors || []).includes(color.value);
+
+            const coincidePrecio =
+                Number(p.price) <= Number(precio.value);
+
+            return coincideTalla &&
+                   coincideMarca &&
+                   coincideColor &&
+                   coincidePrecio;
+        });
+
+        /* ACTUALIZAR PRODUCTOS */
+
+        const actualizar = () => {
+            mostrarProductosCategoria(categoria);
+        };
+
+        talla.onchange = actualizar;
+        marca.onchange = actualizar;
+        color.onchange = actualizar;
+        precio.oninput = actualizar;
+
+        /* LIMPIAR FILTROS */
+
+        limpiar.onclick = () => {
+
+            talla.value = "";
+            marca.value = "";
+            color.value = "";
+            precio.value = maximo;
+
+            actualizar();
+        };
+    }
+}
+
 
 /* OCULTAR EL TÍTULO DUPLICADO AL VER UN EQUIPO MLB */
 
@@ -214,7 +418,45 @@ if (enlaceVolverCategoria) {
     
 if (productosFiltrados.length === 0) {
     const mensaje = document.createElement("p");
-    mensaje.textContent = "Todavía no hay productos en esta categoría.";
+    
+/* MLB - MENSAJE CUANDO NO HAY RESULTADOS
+   PASO 1127 */
+
+const hayGorrasDelEquipo =
+    categoria === "gorras" &&
+    equipoSeleccionado &&
+    obtenerProductosPorCategoria(categoria).some(
+        producto => producto.team === equipoSeleccionado
+    );
+
+if (hayGorrasDelEquipo) {
+
+    mensaje.textContent =
+        "No encontramos gorras con estos filtros. " +
+        "Prueba a aumentar el precio máximo o pulsa " +
+        "«Limpiar filtros» para ver las gorras disponibles.";
+
+} else if (categoria === "gorras" && equipoSeleccionado) {
+
+    mensaje.textContent =
+        "Próximamente encontrarás aquí las gorras de este equipo.";
+
+} else {
+
+    mensaje.textContent =
+        "Todavía no hay productos en esta categoría.";
+
+}
+
+
+/* MLB - ESTILO DEL MENSAJE SIN RESULTADOS
+   PASO 1129 */
+
+if (categoria === "gorras" && equipoSeleccionado) {
+    mensaje.classList.add("mlb-mensaje-sin-resultados");
+    mensaje.setAttribute("role", "status");
+}
+
     contenedor.appendChild(mensaje);
     return;
 }
@@ -552,6 +794,69 @@ equipos.forEach((equipo) => {
 
         prepararSelector();
 
+    }
+
+})();
+
+
+
+/* =========================================
+   MLB - ABRIR Y CERRAR FILTROS MOVILES
+   PASO 1126
+   ========================================= */
+
+(function iniciarFiltrosMovilesMLB() {
+
+    function prepararBoton() {
+
+        const boton = document.getElementById(
+            "mlb-abrir-filtros"
+        );
+
+        const panel = document.getElementById(
+            "mlb-filtros-panel"
+        );
+
+        if (!boton || !panel) return;
+
+        boton.addEventListener("click", () => {
+
+            const abierto = panel.classList.toggle(
+                "mlb-filtros-abiertos"
+            );
+
+            boton.setAttribute(
+                "aria-expanded",
+                String(abierto)
+            );
+
+            boton.textContent = abierto
+                ? "Ocultar filtros"
+                : "Filtrar gorras";
+        });
+
+        /* CERRAR FILTROS AL CAMBIAR DE PAGINA */
+
+        window.addEventListener("hashchange", () => {
+
+            panel.classList.remove("mlb-filtros-abiertos");
+
+            boton.setAttribute("aria-expanded", "false");
+
+            boton.textContent = "Filtrar gorras";
+        });
+    }
+
+    if (document.readyState === "loading") {
+
+        document.addEventListener(
+            "DOMContentLoaded",
+            prepararBoton
+        );
+
+    } else {
+
+        prepararBoton();
     }
 
 })();

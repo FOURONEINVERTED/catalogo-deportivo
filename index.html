@@ -746,8 +746,147 @@
 
 </section> <!-- Cierre de equipos-mlb -->
 
-<div id="productos-categoria" class="productos-grid">
+
+<!-- =========================================
+     MLB - CABECERA DEL EQUIPO SELECCIONADO
+     PASO 1107
+     ========================================= -->
+
+<div
+    id="mlb-pagina-equipo"
+    class="mlb-pagina-equipo"
+    hidden
+>
+
+    <!-- RUTA DE NAVEGACION -->
+
+    <nav
+        class="mlb-ruta-navegacion"
+        aria-label="Ruta de navegación"
+    >
+        <a href="#/inicio">Inicio</a>
+
+        <span>/</span>
+
+        <a href="#/categoria/gorras">Gorras</a>
+
+        <span>/</span>
+
+        <span id="mlb-nombre-ruta">Equipo MLB</span>
+    </nav>
+
+    <!-- TITULO DEL EQUIPO -->
+
+    <div class="mlb-cabecera-equipo">
+
+        <h2 id="mlb-titulo-equipo">
+            Gorras del equipo
+        </h2>
+
+        <p>
+            Explora las gorras disponibles
+            de este equipo.
+        </p>
+
+    </div>
+
 </div>
+
+
+
+<!-- =========================================
+     MLB - ESTRUCTURA DEL CATALOGO POR EQUIPO
+     PASO 1110
+     ========================================= -->
+
+
+<!-- MLB - FILTROS DE GORRAS - PASO 1117 -->
+
+<!-- CONTENEDOR DE FILTROS Y PRODUCTOS -->
+<div class="mlb-catalogo-layout">
+
+
+<!-- MLB - BOTON DE FILTROS PARA MOVILES - PASO 1126 -->
+
+<button
+    type="button"
+    id="mlb-abrir-filtros"
+    aria-controls="mlb-filtros-panel"
+    aria-expanded="false"
+>
+    Filtrar gorras
+</button>
+
+
+<aside id="mlb-filtros-panel" class="mlb-catalogo-filtros">
+
+    <h2>Filtros</h2>
+
+    <!-- FILTRO POR TALLA -->
+    <div class="mlb-filtro-grupo">
+        <label for="mlb-filtro-talla">Tallas</label>
+
+        <select id="mlb-filtro-talla">
+            <option value="">Todas las tallas</option>
+        </select>
+    </div>
+
+    <!-- FILTRO POR MARCA -->
+    <div class="mlb-filtro-grupo">
+        <label for="mlb-filtro-marca">Marcas</label>
+
+        <select id="mlb-filtro-marca">
+            <option value="">Todas las marcas</option>
+        </select>
+    </div>
+
+    <!-- FILTRO POR COLOR -->
+    <div class="mlb-filtro-grupo">
+        <label for="mlb-filtro-color">Colores</label>
+
+        <select id="mlb-filtro-color">
+            <option value="">Todos los colores</option>
+        </select>
+    </div>
+
+    <!-- FILTRO POR PRECIO -->
+    <div class="mlb-filtro-grupo">
+        <label for="mlb-filtro-precio">Precio máximo</label>
+
+        <input
+            type="range"
+            id="mlb-filtro-precio"
+            min="0"
+            max="100"
+            value="100"
+            step="1"
+        >
+
+        <output id="mlb-precio-valor">100 €</output>
+    </div>
+
+    <!-- LIMPIAR FILTROS -->
+    <button
+        type="button"
+        id="mlb-limpiar-filtros"
+    >
+        Limpiar filtros
+    </button>
+
+</aside>
+
+
+    <!-- PRODUCTOS DE LA CATEGORIA -->
+
+    <div
+        id="productos-categoria"
+        class="productos-grid"
+    ></div>
+
+</div> <!-- Cierre de mlb-catalogo-layout -->
+
+</div>
+
 
 </section> <!-- Cierre de vista-categoria-detalle -->
 

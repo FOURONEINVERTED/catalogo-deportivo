@@ -2649,3 +2649,428 @@ aside[aria-label="Estado del catálogo"] p {
     }
 
 }
+
+
+
+/* =========================================
+   MLB - LIMPIAR CABECERA DEL EQUIPO
+   PASO 1109
+   ========================================= */
+
+/* OCULTAR "EXPLORA POR EQUIPO"
+   SOLO CUANDO HAY UN EQUIPO SELECCIONADO */
+
+#vista-categoria-detalle:has(
+    #mlb-pagina-equipo:not([hidden])
+) .titulo-equipos-mlb {
+    display: none;
+}
+
+/* DISEÑO DE LA CABECERA INDIVIDUAL */
+
+#mlb-pagina-equipo:not([hidden]) {
+    margin: 24px 0 32px;
+    padding: 24px 0;
+    border-bottom: 1px solid #dddddd;
+}
+
+/* RUTA DE NAVEGACION */
+
+.mlb-ruta-navegacion {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 24px;
+    font-size: 14px;
+    color: #555555;
+}
+
+.mlb-ruta-navegacion a {
+    color: #333333;
+    text-decoration: none;
+}
+
+/* TITULO DEL EQUIPO */
+
+.mlb-cabecera-equipo h2 {
+    margin: 0 0 12px;
+    font-size: 32px;
+    font-weight: 700;
+    color: #222222;
+}
+
+/* DESCRIPCION */
+
+.mlb-cabecera-equipo p {
+    margin: 0;
+    font-size: 16px;
+    color: #666666;
+}
+
+/* ADAPTACION MOVIL */
+
+@media (max-width: 480px) {
+
+    .mlb-cabecera-equipo h2 {
+        font-size: 25px;
+    }
+
+    .mlb-ruta-navegacion {
+        font-size: 12px;
+        gap: 5px;
+    }
+
+    #mlb-pagina-equipo:not([hidden]) {
+        margin: 16px 0 24px;
+        padding: 16px 0;
+    }
+
+}
+
+
+
+/* =========================================
+   MLB - CATALOGO INDIVIDUAL POR EQUIPO
+   PASO 1110
+   ========================================= */
+
+/* ESTRUCTURA GENERAL */
+
+.mlb-catalogo-layout {
+    width: 100%;
+    min-width: 0;
+}
+
+/* FILTROS OCULTOS EN OTRAS CATEGORIAS */
+
+.mlb-catalogo-filtros {
+    display: none;
+}
+
+/* DOS COLUMNAS SOLO PARA UN EQUIPO MLB */
+
+#vista-categoria-detalle:has(
+    #mlb-pagina-equipo:not([hidden])
+) .mlb-catalogo-layout {
+    display: grid;
+    grid-template-columns: 240px minmax(0, 1fr);
+    gap: 30px;
+    align-items: start;
+}
+
+/* PANEL DE FILTROS */
+
+#vista-categoria-detalle:has(
+    #mlb-pagina-equipo:not([hidden])
+) .mlb-catalogo-filtros {
+    display: block;
+    padding: 20px;
+    background: #ffffff;
+    border: 1px solid #dddddd;
+    border-radius: 8px;
+}
+
+.mlb-catalogo-filtros h2 {
+    margin: 0 0 20px;
+    font-size: 20px;
+    color: #222222;
+}
+
+.mlb-catalogo-filtros p {
+    font-size: 14px;
+    line-height: 1.5;
+    color: #666666;
+}
+
+/* ESPACIO DE PRODUCTOS */
+
+#productos-categoria {
+    min-width: 0;
+}
+
+/* ADAPTACION A MOVILES Y TABLETS */
+
+@media (max-width: 767px) {
+
+    #vista-categoria-detalle:has(
+        #mlb-pagina-equipo:not([hidden])
+    ) .mlb-catalogo-layout {
+        display: block;
+    }
+
+    #vista-categoria-detalle:has(
+        #mlb-pagina-equipo:not([hidden])
+    ) .mlb-catalogo-filtros {
+        display: none;
+    }
+
+}
+
+
+
+/* =========================================
+   MLB - DISTRIBUCION DE GORRAS
+   PASO 1112
+   ========================================= */
+
+/* ORGANIZAR PRODUCTOS DESDE LA IZQUIERDA */
+
+@media (min-width: 768px) {
+
+    #vista-categoria-detalle:has(
+        #mlb-pagina-equipo:not([hidden])
+    ) #productos-categoria {
+
+        display: grid;
+
+        grid-template-columns: repeat(
+            auto-fill,
+            minmax(240px, 280px)
+        );
+
+        justify-content: start;
+        justify-items: start;
+        align-items: start;
+
+        gap: 24px;
+        width: 100%;
+        margin: 0;
+    }
+
+}
+
+
+
+/* =========================================
+   MLB - DISTRIBUCION DE GORRAS
+   PASO 1112
+   ========================================= */
+
+/* ORGANIZAR PRODUCTOS DESDE LA IZQUIERDA */
+
+@media (min-width: 768px) {
+
+    #vista-categoria-detalle:has(
+        #mlb-pagina-equipo:not([hidden])
+    ) #productos-categoria {
+
+        display: grid;
+
+        grid-template-columns: repeat(
+            auto-fill,
+            minmax(240px, 280px)
+        );
+
+        justify-content: start;
+        justify-items: start;
+        align-items: start;
+
+        gap: 24px;
+        width: 100%;
+        margin: 0;
+    }
+
+}
+
+
+
+/* =========================================
+   FOURONE WEB 2.0
+   MLB - ESTILO DE FILTROS
+   PASO 1123
+   ========================================= */
+
+/* TITULO DEL PANEL */
+
+.mlb-catalogo-filtros h2 {
+    margin: 0 0 24px;
+    font-size: 22px;
+    font-weight: 700;
+    color: #222222;
+}
+
+/* GRUPOS DE FILTROS */
+
+.mlb-catalogo-filtros .mlb-filtro-grupo {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-bottom: 20px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid #e5e5e5;
+}
+
+/* ETIQUETAS */
+
+.mlb-catalogo-filtros .mlb-filtro-grupo label {
+    display: block;
+    font-size: 15px;
+    font-weight: 600;
+    color: #222222;
+}
+
+/* MENUS DESPLEGABLES */
+
+.mlb-catalogo-filtros .mlb-filtro-grupo select {
+    display: block;
+    width: 100%;
+    min-width: 0;
+    padding: 11px 10px;
+    border: 1px solid #cccccc;
+    border-radius: 6px;
+    background: #ffffff;
+    color: #222222;
+    font-size: 14px;
+    box-sizing: border-box;
+    cursor: pointer;
+}
+
+/* BARRA DE PRECIO */
+
+.mlb-catalogo-filtros #mlb-filtro-precio {
+    display: block;
+    width: 100%;
+    margin: 6px 0;
+    accent-color: #111111;
+    cursor: pointer;
+}
+
+/* VALOR DEL PRECIO */
+
+.mlb-catalogo-filtros #mlb-precio-valor {
+    display: block;
+    font-size: 15px;
+    font-weight: 600;
+    color: #222222;
+}
+
+/* BOTON LIMPIAR FILTROS */
+
+.mlb-catalogo-filtros #mlb-limpiar-filtros {
+    display: block;
+    width: 100%;
+    padding: 13px 12px;
+    background: #111111;
+    color: #ffffff;
+    border: none;
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.mlb-catalogo-filtros #mlb-limpiar-filtros:hover {
+    background: #333333;
+}
+
+/* ACCESIBILIDAD */
+
+.mlb-catalogo-filtros select:focus-visible,
+.mlb-catalogo-filtros input:focus-visible,
+.mlb-catalogo-filtros button:focus-visible {
+    outline: 2px solid #333333;
+    outline-offset: 3px;
+}
+
+
+
+/* =========================================
+   FOURONE WEB 2.0
+   FILTROS DESPLEGABLES PARA MOVILES
+   PASO 1126
+   ========================================= */
+
+/* BOTON OCULTO EN ORDENADORES */
+
+#mlb-abrir-filtros {
+    display: none;
+}
+
+@media (max-width: 767px) {
+
+    /* BOTON SOLO EN PAGINAS DE EQUIPOS MLB */
+
+    #vista-categoria-detalle:has(
+        #mlb-pagina-equipo:not([hidden])
+    ) #mlb-abrir-filtros {
+        display: flex;
+        width: 100%;
+        min-height: 52px;
+        align-items: center;
+        justify-content: center;
+        padding: 12px;
+        margin-bottom: 16px;
+        background: #111111;
+        color: #ffffff;
+        border: none;
+        border-radius: 10px;
+        font-size: 16px;
+        font-weight: 700;
+        cursor: pointer;
+        box-sizing: border-box;
+    }
+
+    /* FILTROS OCULTOS INICIALMENTE */
+
+    #vista-categoria-detalle:has(
+        #mlb-pagina-equipo:not([hidden])
+    ) .mlb-catalogo-filtros {
+        display: none;
+        width: 100%;
+        margin-bottom: 20px;
+        box-sizing: border-box;
+    }
+
+    /* MOSTRAR FILTROS AL ABRIRLOS */
+
+    #vista-categoria-detalle:has(
+        #mlb-pagina-equipo:not([hidden])
+    ) .mlb-catalogo-filtros.mlb-filtros-abiertos {
+        display: block;
+    }
+
+}
+
+
+
+/* =========================================
+   FOURONE WEB 2.0
+   MLB - MENSAJES SIN RESULTADOS
+   PASO 1129
+   ========================================= */
+
+#productos-categoria .mlb-mensaje-sin-resultados {
+    grid-column: 1 / -1;
+    display: block;
+
+    width: 100%;
+    max-width: 520px;
+    box-sizing: border-box;
+
+    margin: 0;
+    padding: 28px 24px;
+
+    background: #ffffff;
+    border: 1px solid #e5e5e5;
+    border-left: 4px solid #111111;
+    border-radius: 10px;
+
+    color: #444444;
+    font-size: 16px;
+    line-height: 1.7;
+    text-align: left;
+}
+
+/* ADAPTACION PARA MOVILES */
+
+@media (max-width: 480px) {
+
+    #productos-categoria .mlb-mensaje-sin-resultados {
+        max-width: 100%;
+        padding: 20px 16px;
+        font-size: 14px;
+        line-height: 1.6;
+    }
+
+}
