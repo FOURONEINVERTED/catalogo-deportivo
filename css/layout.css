@@ -3074,3 +3074,364 @@ aside[aria-label="Estado del catálogo"] p {
     }
 
 }
+
+
+
+
+/* =========================================
+   FOURONE WEB 2.0
+   LOGOTIPOS MLB EN LA CABECERA
+   PASO 1141
+   ========================================= */
+
+/* ALINEACION DE LOS LOGOTIPOS */
+
+.site-header .brand {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+/* CONTENEDOR DEL LOGOTIPO MLB */
+
+.site-header .mlb-logo-en-cabecera {
+    width: 100px;
+    height: 100px;
+    flex-shrink: 0;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    /* ELIMINAR EL CIRCULO BLANCO */
+
+    background: transparent;
+    border: none;
+    border-radius: 0;
+    padding: 0;
+
+    box-sizing: border-box;
+}
+
+
+
+/* =========================================
+   FOURONE WEB 2.0
+   LOGOS MLB MAS GRANDES EN LA CABECERA
+   PASO 1144
+   ========================================= */
+
+/* CONTENEDOR DEL LOGO MLB */
+
+.site-header .mlb-logo-en-cabecera {
+    width: 120px;
+    height: 120px;
+    flex-shrink: 0;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: transparent;
+    border: none;
+    border-radius: 0;
+    padding: 0;
+
+    box-sizing: border-box;
+}
+
+/* IMAGEN DEL EQUIPO */
+
+.site-header .mlb-logo-en-cabecera img {
+    display: block;
+
+    width: 85px;
+    height: 85px;
+
+    max-width: none;
+    max-height: none;
+
+    object-fit: contain;
+    flex-shrink: 0;
+    transform-origin: center;
+}
+
+/* ADAPTACION PARA MOVILES */
+
+@media (max-width: 480px) {
+
+    .site-header .mlb-logo-en-cabecera {
+        width: 78px;
+        height: 78px;
+    }
+
+    .site-header .mlb-logo-en-cabecera img {
+        width: 58px;
+        height: 58px;
+    }
+
+}
+
+
+
+/* =========================================
+   FOURONE WEB 2.0
+   CLEVELAND GUARDIANS - TM BLANCO LEGIBLE
+   PASO 1193
+   ========================================= */
+
+.site-header .mlb-logo-en-cabecera:has(
+    img[src*="cleveland-guardians-cabecera"]
+) {
+    position: relative;
+}
+
+.site-header .mlb-logo-en-cabecera:has(
+    img[src*="cleveland-guardians-cabecera"]
+)::after {
+    position: absolute;
+
+    right: 12px;
+    bottom: 10px;
+
+    color: #ffffff;
+    font-family: Arial, sans-serif;
+    font-size: 11px;
+    font-weight: 700;
+    line-height: 1;
+
+    pointer-events: none;
+}
+
+/* MOVILES */
+
+@media (max-width: 480px) {
+
+    .site-header .mlb-logo-en-cabecera:has(
+        img[src*="cleveland-guardians-cabecera"]
+    )::after {
+        font-size: 9px;
+        right: 5px;
+        bottom: 5px;
+    }
+
+}
+
+
+
+/* =========================================
+   FOURONE WEB 2.0
+   TAMAÑO UNIFORME DE LOS 30 LOGOS MLB
+   PASO 1198
+   ========================================= */
+
+/* CONTENEDOR DE LOS LOGOTIPOS */
+
+.site-header .mlb-logo-en-cabecera {
+    
+    width: 135px;
+    height: 135px;
+    flex-shrink: 0;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: transparent;
+    border: none;
+    padding: 0;
+}
+
+/* TAMAÑO COMUN PARA TODOS LOS EQUIPOS */
+
+.site-header .mlb-logo-en-cabecera img {
+    display: block;
+    width: 115px !important;
+    height: 115px !important;
+
+
+    max-width: none;
+    max-height: none;
+
+    object-fit: contain;
+    transform: none !important;
+    transform-origin: center;
+}
+
+/* ADAPTACION A MOVILES */
+
+@media (max-width: 480px) {
+
+    .site-header .mlb-logo-en-cabecera {
+        width: 65px;
+        height: 65px;
+    }
+
+    .site-header .mlb-logo-en-cabecera img {
+        width: 60px !important;
+        height: 60px !important;
+    }
+
+}
+
+
+
+/* =========================================
+   FOURONE WEB 2.0
+   MIAMI MARLINS - AJUSTE VISUAL
+   PASO 1199
+   ========================================= */
+
+.site-header .mlb-logo-en-cabecera
+img[src*="miami-marlins"] {
+
+    transform: scale(1.38) !important;
+    transform-origin: center;
+
+}
+
+/* ADAPTACION PARA MOVILES */
+
+@media (max-width: 480px) {
+
+    .site-header .mlb-logo-en-cabecera
+    img[src*="miami-marlins"] {
+
+        transform: scale(1.20) !important;
+
+    }
+
+}
+
+
+
+/* =========================================
+   FOURONE WEB 2.0
+   IGUALAR LOGOS MLB A ATLANTA BRAVES
+   PASO 1200
+   SOLO BARRA SUPERIOR
+   ========================================= */
+
+/* NEW YORK METS */
+.site-header .mlb-logo-en-cabecera
+img[src*="new-york-mets"] {
+    transform: scale(1.48) !important;
+}
+
+/* BALTIMORE ORIOLES */
+.site-header .mlb-logo-en-cabecera
+img[src*="baltimore-orioles"] {
+    transform: scale(1.52) !important;
+}
+
+/* CHICAGO CUBS */
+.site-header .mlb-logo-en-cabecera
+img[src*="chicago-cubs"] {
+    transform: scale(2.20) !important;
+}
+
+/* DETROIT TIGERS */
+.site-header .mlb-logo-en-cabecera
+img[src*="detroit-tigers"] {
+    transform: scale(1.64) !important;
+}
+
+/* PHILADELPHIA PHILLIES */
+.site-header .mlb-logo-en-cabecera
+img[src*="philadelphia-phillies"] {
+    transform: scale(1.10) !important;
+}
+
+/* LOS ANGELES ANGELS */
+.site-header .mlb-logo-en-cabecera
+img[src*="los-angeles-angels"] {
+    transform: scale(2.10) !important;
+}
+
+/* MINNESOTA TWINS */
+.site-header .mlb-logo-en-cabecera
+img[src*="minnesota-twins"] {
+    transform: scale(2.20) !important;
+}
+
+/* HOUSTON ASTROS */
+.site-header .mlb-logo-en-cabecera
+img[src*="houston-astros"] {
+    transform: scale(1.09) !important;
+}
+
+/* LOS ANGELES DODGERS */
+.site-header .mlb-logo-en-cabecera
+img[src*="los-angeles-dodgers"] {
+    transform: scale(1.23) !important;
+}
+
+/* MILWAUKEE BREWERS */
+.site-header .mlb-logo-en-cabecera
+img[src*="milwaukee-brewers"] {
+    transform: scale(1.25) !important;
+}
+
+
+
+/* =========================================
+   FOURONE WEB 2.0
+   BOSTON RED SOX - AJUSTE DE TAMAÑO
+   PASO 1201
+   ========================================= */
+
+.site-header .mlb-logo-en-cabecera
+img[src*="boston-red-sox"] {
+    transform: scale(1.28) !important;
+    transform-origin: center;
+}
+
+
+
+/* PASO 1213 - SAN FRANCISCO GIANTS */
+/* AUMENTAR LOGO SOLO EN LA BARRA SUPERIOR */
+
+.site-header .mlb-logo-en-cabecera
+img[src*="san-francisco-giants"] {
+    transform: scale(1.45) !important;
+    transform-origin: center;
+}
+
+
+
+/* PASO 1214 - TORONTO BLUE JAYS */
+/* AUMENTAR LOGO SOLO EN LA BARRA SUPERIOR */
+
+.site-header .mlb-logo-en-cabecera
+img[src*="toronto-blue-jays"] {
+    transform: scale(1.65) !important;
+    transform-origin: center;
+}
+
+
+
+/* =========================================
+   FOURONE WEB 2.0
+   NOMBRE DE LA MARCA EN LA CABECERA
+   PASO 1218
+   ========================================= */
+
+.site-header .nombre-header {
+    display: inline-block;
+    color: #ffffff;
+    font-family: Arial, sans-serif;
+    font-size: 27px;
+    font-weight: 800;
+    letter-spacing: 2px;
+    line-height: 1.2;
+    white-space: nowrap;
+}
+
+/* VERSION MOVIL */
+
+@media (max-width: 480px) {
+    .site-header .nombre-header {
+        font-size: 15px;
+        letter-spacing: 1px;
+    }
+}

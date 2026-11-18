@@ -79,7 +79,6 @@ function mostrarCategorias() {
         { id: "gorras", nombre: "Gorras" },
         { id: "ropa", nombre: "Ropa deportiva" },
         { id: "accesorios", nombre: "Accesorios" },
-        { id: "balones", nombre: "Balones" }
     ];
 
     contenedor.innerHTML = "";
