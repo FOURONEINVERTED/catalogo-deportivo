@@ -241,7 +241,26 @@
 >
    <h2 class="titulo-equipos-mlb">Explora por equipo</h2>
 
-<div class="equipos-mlb-lista">
+<!-- BOTON PARA MOSTRAR LOS 30 EQUIPOS MLB -->
+
+<button
+    type="button"
+    class="boton-ver-todos-mlb"
+    aria-expanded="false"
+    onclick="
+        const lista = document.querySelector('#equipos-mlb .equipos-mlb-lista');
+        const abierto = lista.classList.toggle('mostrar-todos');
+        this.setAttribute('aria-expanded', String(abierto));
+        this.textContent = abierto ? 'Ver carrusel' : 'Ver todos los equipos';
+    "
+>
+    Ver todos los equipos
+</button>
+
+
+<div class="equipos-mlb-lista"
+     onclick="window.posicionCarruselMLB = this.scrollLeft">
+
 
 
 

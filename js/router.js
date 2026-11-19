@@ -52,6 +52,20 @@ if (categoria === "gorras") {
         carruselMLB.hidden = !mostrarCarrusel;
         carruselMLB.style.display = mostrarCarrusel ? "" : "none";
 
+/* RECUPERAR POSICION DEL CARRUSEL MLB */
+
+if (mostrarCarrusel) {
+    requestAnimationFrame(() => {
+        requestAnimationFrame(() => {
+            const lista = carruselMLB.querySelector(".equipos-mlb-lista");
+
+            if (lista && typeof window.posicionCarruselMLB === "number") {
+                lista.scrollLeft = window.posicionCarruselMLB;
+            }
+        });
+    });
+}
+
     }
 }
 

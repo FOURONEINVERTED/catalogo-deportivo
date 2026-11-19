@@ -3435,3 +3435,113 @@ img[src*="toronto-blue-jays"] {
         letter-spacing: 1px;
     }
 }
+
+
+
+/* =========================================
+   FOURONE WEB 2.0
+   CUADRICULA DE LOS 30 EQUIPOS MLB
+   PASO 1263
+   ========================================= */
+
+@media (min-width: 769px) {
+
+    #equipos-mlb .equipos-mlb-lista.mostrar-todos {
+        display: grid !important;
+        grid-template-columns:
+            repeat(auto-fit, minmax(130px, 1fr));
+        gap: 20px;
+        overflow-x: visible !important;
+        max-width: 100%;
+    }
+
+    #equipos-mlb .equipos-mlb-lista.mostrar-todos
+    > .equipo-mlb {
+        width: auto !important;
+        min-width: 0;
+        flex: initial !important;
+        text-align: center;
+    }
+
+}
+
+
+
+/* =========================================
+   FOURONE WEB 2.0
+   BOTON VER TODOS LOS EQUIPOS MLB
+   PASO 1265
+   ========================================= */
+
+/* DISEÑO DEL BOTON EN ORDENADOR */
+
+#equipos-mlb .boton-ver-todos-mlb {
+    display: block;
+    margin: 0;
+    padding: 16px 35px;
+
+    background-color: #111111;
+    color: #ffffff;
+
+    border: none;
+    border-radius: 12px;
+
+    font-size: 17px;
+    font-weight: 700;
+    font-family: Arial, sans-serif;
+
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+/* EFECTO AL PASAR EL RATON */
+
+#equipos-mlb .boton-ver-todos-mlb:hover {
+    background-color: #333333;
+}
+
+/* OCULTAR ESTE BOTON EN MOVILES */
+
+@media (max-width: 768px) {
+    #equipos-mlb .boton-ver-todos-mlb {
+        display: none !important;
+    }
+}
+
+/* PASO 1267 - BOTON ARRIBA A LA DERECHA */
+
+@media (min-width: 769px) {
+
+    #equipos-mlb {
+        position: relative;
+    }
+
+    #equipos-mlb .boton-ver-todos-mlb {
+        position: absolute;
+        top: 0;
+        right: 0;
+        margin: 0;
+        z-index: 2;
+    }
+
+}
+
+
+
+/* =========================================
+   FOURONE WEB 2.0
+   OCULTAR FLECHAS EN CUADRICULA MLB
+   PASO 1269
+   ========================================= */
+
+@media (min-width: 769px) {
+
+    #equipos-mlb:has(.equipos-mlb-lista.mostrar-todos)
+    .equipos-mlb-anterior,
+
+    #equipos-mlb:has(.equipos-mlb-lista.mostrar-todos)
+    .equipos-mlb-siguiente {
+        display: none !important;
+    }
+
+}
