@@ -443,7 +443,19 @@ if (hayGorrasDelEquipo) {
 } else {
 
     mensaje.textContent =
-        "Todavía no hay productos en esta categoría.";
+       mensaje.className = "mensaje-proximamente";
+mensaje.innerHTML = `
+  <div class="mensaje-proximamente-icono" aria-hidden="true">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M12 2 4 6.5 12 11l8-4.5L12 2Z"></path>
+      <path d="M4 6.5V15.5L12 20V11"></path>
+      <path d="M20 6.5V15.5L12 20"></path>
+    </svg>
+  </div>
+  <h3>Próximamente</h3>
+  <p>Estamos preparando una selección especial de productos para esta categoría.</p>
+  <p>Vuelve pronto para descubrir las novedades.</p>
+`;
 
 }
 

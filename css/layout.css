@@ -3545,3 +3545,180 @@ img[src*="toronto-blue-jays"] {
     }
 
 }
+
+
+.mensaje-proximamente {
+  width: 100%;
+  grid-column: 1 / -1;
+  max-width: 960px;
+  margin: 48px auto 0;
+  padding: 26px 32px 28px;
+  background-color: #000;
+  color: #fff;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 24px;
+  text-align: center;
+  box-sizing: border-box;
+}
+
+.mensaje-proximamente-icono {
+  width: 34px;
+  height: 34px;
+  margin: 0 auto 14px;
+  color: rgba(255, 255, 255, 0.95);
+}
+
+.mensaje-proximamente-icono svg {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+.mensaje-proximamente h3 {
+  margin: 0 0 18px;
+  font-size: 28px;
+  font-weight: 700;
+  line-height: 1.2;
+  color: #fff;
+}
+
+.mensaje-proximamente p {
+  margin: 0;
+  font-size: 17px;
+  line-height: 1.8;
+  color: rgba(255, 255, 255, 0.82);
+}
+
+.mensaje-proximamente p + p {
+  margin-top: 14px;
+}
+
+@media (max-width: 768px) {
+  .mensaje-proximamente {
+    margin-top: 32px;
+    padding: 22px 20px 24px;
+    border: 1px solid #333333;
+  }
+
+  .mensaje-proximamente h3 {
+    font-size: 24px;
+  }
+
+  .mensaje-proximamente p {
+    font-size: 15px;
+    line-height: 1.7;
+  }
+}
+
+
+/* Dar ancho completo al mensaje de categorías vacías */
+#productos-categoria:has(.mensaje-proximamente) {
+    display: block;
+    width: 100%;
+}
+
+
+
+/* FOURONE WEB 2.0 - Mensaje Próximamente refinado */
+
+.mensaje-proximamente {
+    background-color: #181818;
+    border: 1px solid #303030;
+    border-radius: 18px;
+    padding: 28px 32px;
+    margin-top: 36px;
+    box-shadow: none;
+}
+
+.mensaje-proximamente-icono {
+    width: 28px;
+    height: 28px;
+    margin-bottom: 12px;
+    color: #c6c6c6;
+}
+
+.mensaje-proximamente h3 {
+    font-size: 24px;
+    font-weight: 600;
+    margin-bottom: 12px;
+    color: #f5f5f5;
+}
+
+.mensaje-proximamente p {
+    font-size: 16px;
+    line-height: 1.6;
+    color: #bdbdbd;
+}
+
+.mensaje-proximamente p + p {
+    margin-top: 8px;
+}
+
+@media (max-width: 768px) {
+    .mensaje-proximamente {
+        padding: 24px 18px;
+    }
+
+    .mensaje-proximamente h3 {
+        font-size: 22px;
+    }
+
+    .mensaje-proximamente p {
+        font-size: 15px;
+    }
+}
+
+
+
+/* FOUR ONE INVERTED - Aviso de categoría próximamente */
+
+.mensaje-proximamente {
+    width: 100%;
+    max-width: 960px;
+    margin: 36px auto;
+    padding: 20px 24px;
+    background: #ffffff;
+    color: #171717;
+    border: 1px solid #dddddd;
+    border-left: 4px solid #171717;
+    border-radius: 10px;
+    box-shadow: none;
+    text-align: left;
+    font-family: inherit;
+}
+
+.mensaje-proximamente-icono {
+    display: none;
+}
+
+.mensaje-proximamente h3 {
+    margin: 0 0 8px;
+    color: #171717;
+    font-size: 20px;
+    font-weight: 600;
+}
+
+.mensaje-proximamente p {
+    margin: 0;
+    color: #555555;
+    font-size: 16px;
+    line-height: 1.5;
+}
+
+.mensaje-proximamente p + p {
+    margin-top: 6px;
+}
+
+@media (max-width: 768px) {
+    .mensaje-proximamente {
+        padding: 18px 20px;
+    }
+
+    .mensaje-proximamente h3 {
+        font-size: 18px;
+    }
+
+    .mensaje-proximamente p {
+        font-size: 15px;
+    }
+}

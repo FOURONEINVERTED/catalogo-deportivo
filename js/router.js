@@ -6,7 +6,7 @@ function mostrarVista() {
 
 /* SUBIR AL INICIO AL SELECCIONAR UN EQUIPO MLB */
 
-if (ruta.startsWith("#/categoria/gorras/")) {
+if (ruta.startsWith("#/categoria/")) {
     requestAnimationFrame(() => {
         window.scrollTo(0, 0);
     });
