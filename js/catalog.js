@@ -48,7 +48,7 @@ function mostrarProductos() {
             currency: "EUR"
         });
 
-        tarjeta.append(imagenContenedor, nombre, marca, precio);
+        tarjeta.append(imagenContenedor, nombre, marca);
         contenedor.appendChild(tarjeta);
     });
 }
