@@ -155,4 +155,147 @@ const productos = [
     colors: ["Beige", "Blanco", "Rojo"]
 },
 
+{
+    id: 22,
+    name: "New York Yankees — World Series 2024",
+    category: "gorras",
+    team: "new-york-yankees",
+    brand: "New Era",
+    price: 24.99,
+    image: "assets/images/products/Gorra Yankees World Series 2024 en beige.webp",
+    description: "Gorra New York Yankees edición World Series 2024, con corona beige, visera gris claro, logotipo NY bordado en rojo y parche lateral conmemorativo. Modelo New Era 9FORTY ajustable.",
+    sizes: ["Ajustable"],
+    colors: ["Beige", "Gris claro", "Rojo"]
+},
+
+{
+    id: 23,
+    name: "Toronto Blue Jays — Black & Gold",
+    category: "gorras",
+    team: "toronto-blue-jays",
+    brand: "New Era",
+    price: 24.99,
+    image: "assets/images/products/Gorra Toronto Blue Jays sobre fondo beige.webp",
+    description: "Gorra Toronto Blue Jays en color negro, con logotipo frontal bordado en negro, hoja de arce dorada y parche lateral en tonos dorados. Modelo New Era 9FORTY ajustable.",
+    sizes: ["Ajustable"],
+    colors: ["Negro", "Dorado"]
+},
+
+{
+    id: 24,
+    name: "Athletics — Black & Gold",
+    category: "gorras",
+    team: "athletics",
+    brand: "New Era",
+    price: 24.99,
+    image: "assets/images/products/Gorra Oakland A’s sobre arena beige.webp",
+    description: "Gorra Athletics en color negro, con logotipo frontal bordado en negro, hoja de arce dorada y detalle lateral en tonos dorados. Modelo New Era 9FORTY ajustable.",
+    sizes: ["Ajustable"],
+    colors: ["Negro", "Dorado"]
+},
+
+{
+    id: 25,
+    name: "Houston Astros — Flames XLIV",
+    category: "gorras",
+    team: "houston-astros",
+    brand: "New Era",
+    price: 24.99,
+    image: "assets/images/products/Gorra negra New Era XLIV con llamas.webp",
+    description: "Gorra Houston Astros en color negro, con letra H bordada en blanco y diseño de llamas rojas y azules. Incluye bordado lateral XLIV. Modelo New Era 9FORTY ajustable.",
+    sizes: ["Ajustable"],
+    colors: ["Negro", "Blanco", "Rojo", "Azul"]
+},
+
+{
+    id: 26,
+    name: "Detroit Tigers — Purple All-Star Game",
+    category: "gorras",
+    team: "detroit-tigers",
+    brand: "New Era",
+    price: 24.99,
+    image: "assets/images/products/Gorra morada con emblema All-Star.webp",
+    description: "Gorra Detroit Tigers en combinación morada y marrón, con logotipo D bordado en relieve del mismo tono, botón superior rosa y parche lateral conmemorativo All-Star Game. Modelo New Era 9FORTY ajustable.",
+    sizes: ["Ajustable"],
+    colors: ["Morado", "Marrón", "Rosa"]
+},
+
+{
+    id: 27,
+    name: "Arizona Diamondbacks — Purple & Teal",
+    category: "gorras",
+    team: "arizona-diamondbacks",
+    brand: "New Era",
+    price: 24.99,
+    image: "assets/images/products/Gorra morada Arizona Diamondbacks en estudio.webp",
+    description: "Gorra Arizona Diamondbacks en color morado, con logotipo A bordado en turquesa, negro y detalles plateados. Diseño deportivo de estilo urbano. Modelo New Era 9FORTY ajustable.",
+    sizes: ["Ajustable"],
+    colors: ["Morado", "Turquesa", "Negro"]
+},
+
+{
+    id: 28,
+    name: "New York Mets — Flame Edition",
+    category: "gorras",
+    team: "new-york-mets",
+    brand: "New Era",
+    price: 24.99,
+    image: "assets/images/products/Gorra Mets azul marino con llamas naranjas.webp",
+    description: "Gorra New York Mets con corona azul marino y visera negra, logotipo NY bordado en blanco con detalles de llamas naranjas y bordado lateral Mets en azul. Modelo New Era 9FORTY ajustable.",
+    sizes: ["Ajustable"],
+    colors: ["Azul marino", "Negro", "Blanco", "Naranja"]
+},
+
+{
+    id: 29,
+    name: "Los Angeles Dodgers — World Series 2024",
+    category: "gorras",
+    team: "los-angeles-dodgers",
+    brand: "New Era",
+    price: 24.99,
+    image: "assets/images/products/Gorra LA World Series 2024 en beige.webp",
+    description: "Gorra Los Angeles Dodgers edición World Series 2024, con corona beige, visera gris claro, logotipo LA bordado en rojo con contorno gris y parche lateral conmemorativo. Modelo New Era 9FORTY ajustable.",
+    sizes: ["Ajustable"],
+    colors: ["Beige", "Gris claro", "Rojo"]
+},
+
+{
+    id: 30,
+    name: "Los Angeles Dodgers — World Series 2020",
+    category: "gorras",
+    team: "los-angeles-dodgers",
+    brand: "New Era",
+    price: 24.99,
+    image: "assets/images/products/Gorra LA World Series 2020 en estudio.webp",
+    description: "Gorra Los Angeles Dodgers edición World Series 2020, en color azul marino, con logotipo frontal bordado en azul eléctrico y parche lateral conmemorativo World Series 2020. Modelo New Era 9FORTY ajustable.",
+    sizes: ["Ajustable"],
+    colors: ["Azul marino", "Azul eléctrico"]
+},
+
+{
+    id: 31,
+    name: "New York Mets — Subway Series",
+    category: "gorras",
+    team: "new-york-mets",
+    brand: "New Era",
+    price: 24.99,
+    image: "assets/images/products/Gorra granate Subway Series en estudio.webp",
+    description: "Gorra New York Mets edición Subway Series, con corona granate, visera gris oscuro, logotipo NY bordado en blanco y parche lateral conmemorativo Subway Series. Modelo New Era 9FORTY ajustable.",
+    sizes: ["Ajustable"],
+    colors: ["Granate", "Gris oscuro", "Blanco"]
+},
+
+{
+    id: 32,
+    name: "Texas Rangers — All-Star Game 1995",
+    category: "gorras",
+    team: "texas-rangers",
+    brand: "New Era",
+    price: 24.99,
+    image: "assets/images/products/Gorra azul marino sobre fondo beige cálido.webp",
+    description: "Gorra Texas Rangers con corona azul marino, visera negra, logotipo T bordado con detalles naranjas y parche lateral conmemorativo All-Star Game 1995. Modelo New Era 9FORTY ajustable.",
+    sizes: ["Ajustable"],
+    colors: ["Azul marino", "Negro", "Naranja"]
+},
+
 ];
