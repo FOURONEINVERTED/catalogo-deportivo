@@ -298,4 +298,147 @@ const productos = [
     colors: ["Azul marino", "Negro", "Naranja"]
 },
 
+{
+    id: 33,
+    name: "New York Yankees — Beige & Brown",
+    category: "gorras",
+    team: "new-york-yankees",
+    brand: "New Era",
+    price: 24.99,
+    image: "assets/images/products/Gorra beige con logo NY bordado.webp",
+    description: "Gorra New York Yankees con corona beige, visera marrón chocolate y logotipo NY bordado en marrón oscuro. Diseño bicolor clásico de estilo deportivo y urbano. Modelo New Era 9FORTY ajustable.",
+    sizes: ["Ajustable"],
+    colors: ["Beige", "Marrón chocolate"]
+},
+
+{
+    id: 34,
+    name: "St. Louis Cardinals — World Series Champions 2011",
+    category: "gorras",
+    team: "st-louis-cardinals",
+    brand: "New Era",
+    price: 24.99,
+    image: "assets/images/products/Gorra Cardinals World Series 2011.webp",
+    description: "Gorra St. Louis Cardinals con corona rosa y visera rojo granate, logotipo frontal Cardinals con los tradicionales pájaros sobre el bate y parche lateral World Series Champions 2011. Modelo New Era 9FORTY ajustable.",
+    sizes: ["Ajustable"],
+    colors: ["Rosa", "Rojo granate"]
+},
+
+{
+    id: 35,
+    name: "Philadelphia Phillies — Lavender All-Star Game",
+    category: "gorras",
+    team: "philadelphia-phillies",
+    brand: "New Era",
+    price: 24.99,
+    image: "assets/images/products/Gorra lila All-Star con visera rosa.webp",
+    description: "Gorra Philadelphia Phillies con corona lila, visera rosa, logotipo P bordado en blanco plateado y parche lateral conmemorativo All-Star Game. Modelo New Era 9FORTY ajustable.",
+    sizes: ["Ajustable"],
+    colors: ["Lila", "Rosa", "Blanco plateado"]
+},
+
+{
+    id: 36,
+    name: "Atlanta Braves — World Series 1995",
+    category: "gorras",
+    team: "atlanta-braves",
+    brand: "New Era",
+    price: 24.99,
+    image: "assets/images/products/Gorra New Era marrón con parche bordado.webp",
+    description: "Gorra Atlanta Braves en color marrón chocolate, con logotipo A bordado en blanco y parche lateral conmemorativo World Series 1995 en tonos dorados. Modelo New Era 9FORTY ajustable.",
+    sizes: ["Ajustable"],
+    colors: ["Marrón chocolate", "Blanco", "Dorado"]
+},
+
+{
+    id: 37,
+    name: "St. Louis Cardinals — World Series 1967",
+    category: "gorras",
+    team: "st-louis-cardinals",
+    brand: "New Era",
+    price: 24.99,
+    image: "assets/images/products/Gorra roja de los Cardinals sobre fondo beige.webp",
+    description: "Gorra St. Louis Cardinals en color rojo intenso, con el tradicional logotipo del cardenal sobre el bate bordado en rojo y blanco, y parche lateral conmemorativo World Series 1967. Modelo New Era 9FORTY ajustable.",
+    sizes: ["Ajustable"],
+    colors: ["Rojo", "Blanco"]
+},
+
+{
+    id: 38,
+    name: "Los Angeles Dodgers — 100.º Aniversario",
+    category: "gorras",
+    team: "los-angeles-dodgers",
+    brand: "New Era",
+    price: 24.99,
+    image: "assets/images/products/Gorra rosa Dodgers con bordados y pegatina 9FORTY.webp",
+    description: "Gorra Los Angeles Dodgers en color rosa, con logotipo LA bordado en blanco, detalles florales de rosas rojas y parche lateral conmemorativo del 100.º aniversario (1890–1990). Modelo New Era 9FORTY ajustable.",
+    sizes: ["Ajustable"],
+    colors: ["Rosa", "Blanco", "Rojo", "Verde"]
+},
+
+{
+    id: 39,
+    name: "San Francisco Giants — Green All-Star Game",
+    category: "gorras",
+    team: "san-francisco-giants",
+    brand: "New Era",
+    price: 24.99,
+    image: "assets/images/products/Gorra SF bordada con parche All-Star.webp",
+    description: "Gorra San Francisco Giants con corona verde oscuro, visera negra, logotipo SF bordado en blanco y parche lateral conmemorativo All-Star Game con detalles rosas. Modelo New Era 9FORTY ajustable.",
+    sizes: ["Ajustable"],
+    colors: ["Verde oscuro", "Negro", "Blanco"]
+},
+
+{
+    id: 40,
+    name: "Chicago White Sox — World Series Champions 10.º Aniversario",
+    category: "gorras",
+    team: "chicago-white-sox",
+    brand: "New Era",
+    price: 24.99,
+    image: "assets/images/products/Gorra Sox Negra sobre Fondo Beige.webp",
+    description: "Gorra Chicago White Sox en color negro, con logotipo SOX bordado en blanco y negro, paneles traseros de malla estilo trucker y parche lateral conmemorativo World Series Champions 10.º Aniversario. Modelo New Era 9FORTY ajustable.",
+    sizes: ["Ajustable"],
+    colors: ["Negro", "Blanco"]
+},
+
+{
+    id: 41,
+    name: "St. Louis Cardinals — Sky Blue Retro",
+    category: "gorras",
+    team: "st-louis-cardinals",
+    brand: "New Era",
+    price: 24.99,
+    image: "assets/images/products/Gorra STL Cardinals en estudio retro.webp",
+    description: "Gorra St. Louis Cardinals de estilo retro, con corona azul celeste, visera beige, logotipo STL bordado en blanco y parche lateral con el emblemático Gateway Arch de St. Louis. Modelo New Era 9FORTY ajustable.",
+    sizes: ["Ajustable"],
+    colors: ["Azul celeste", "Beige", "Blanco"]
+},
+
+{
+    id: 42,
+    name: "St. Louis Cardinals — Black Monochrome Edition",
+    category: "gorras",
+    team: "st-louis-cardinals",
+    brand: "New Era",
+    price: 24.99,
+    image: "assets/images/products/Gorra STL Monocromática de los Cardinals.webp",
+    description: "Gorra St. Louis Cardinals completamente negra, con logotipo STL bordado en relieve del mismo tono y parche lateral conmemorativo World Series Champions. Diseño monocromático de estilo deportivo y urbano. Modelo New Era 9FORTY ajustable.",
+    sizes: ["Ajustable"],
+    colors: ["Negro"]
+},
+
+{
+    id: 43,
+    name: "Boston Red Sox — World Series 2004",
+    category: "gorras",
+    team: "boston-red-sox",
+    brand: "New Era",
+    price: 24.99,
+    image: "assets/images/products/Gorra Verde Boston Red Sox 2004.webp",
+    description: "Gorra Boston Red Sox en color verde, con logotipo B bordado en rojo y contorno blanco, y parche lateral conmemorativo World Series 2004. Modelo New Era 9FORTY ajustable.",
+    sizes: ["Ajustable"],
+    colors: ["Verde", "Rojo", "Blanco"]
+},
+
 ];
