@@ -3808,3 +3808,14 @@ img[src*="toronto-blue-jays"] {
 .producto-card .producto-imagen img[alt="New York Yankees — World Series 2024"] {
     object-fit: cover;
 }
+
+
+
+/* FOTOGRAFIAS DE PRODUCTOS EN MOVIL */
+
+@media (max-width: 600px) {
+    .producto-card .producto-imagen {
+        height: auto;
+        aspect-ratio: 3 / 4;
+    }
+}
