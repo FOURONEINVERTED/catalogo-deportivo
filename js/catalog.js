@@ -49,6 +49,26 @@ function mostrarProductos() {
         });
 
         tarjeta.append(imagenContenedor, nombre, marca);
+
+const estadosTarjeta = {
+    disponible: "Disponible",
+    pocas: "Quedan pocas unidades",
+    agotado: "No disponible"
+};
+
+const textoDisponibilidad = estadosTarjeta[producto.availability];
+
+if (textoDisponibilidad) {
+    const disponibilidad = document.createElement("p");
+
+    disponibilidad.className =
+        "producto-disponibilidad estado-" + producto.availability;
+
+    disponibilidad.textContent = textoDisponibilidad;
+
+    tarjeta.append(disponibilidad);
+}
+
         contenedor.appendChild(tarjeta);
     });
 }
