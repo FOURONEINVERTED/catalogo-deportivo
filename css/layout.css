@@ -1767,23 +1767,25 @@ aside[aria-label="Estado del catálogo"] p {
     background-color: currentColor;
 }
 
-/* DISPONIBLE */
 
+/* DISPONIBLE */
 #detalle-producto .estado-disponible {
-    color: #237347;
+    color: #15803d;
+    background-color: #dcfce7;
 }
 
 /* QUEDAN POCAS UNIDADES */
-
 #detalle-producto .estado-pocas {
-    color: #a16207;
+    color: #b45309;
+    background-color: #fef3c7;
 }
 
 /* NO DISPONIBLE */
-
 #detalle-producto .estado-agotado {
-    color: #b42318;
+    color: #be123c;
+    background-color: #ffe4e6;
 }
+
 
 /* SEPARACIÓN CON LA DESCRIPCIÓN */
 
@@ -2824,10 +2826,9 @@ aside[aria-label="Estado del catálogo"] p {
 
         display: grid;
 
-        grid-template-columns: repeat(
-            auto-fill,
-            minmax(240px, 280px)
-        );
+        
+        grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+
 
         justify-content: start;
         justify-items: start;
@@ -2849,7 +2850,7 @@ aside[aria-label="Estado del catálogo"] p {
 
 /* ORGANIZAR PRODUCTOS DESDE LA IZQUIERDA */
 
-@media (min-width: 768px) {
+@media (min-width: 1100px) {
 
     #vista-categoria-detalle:has(
         #mlb-pagina-equipo:not([hidden])
@@ -2857,10 +2858,10 @@ aside[aria-label="Estado del catálogo"] p {
 
         display: grid;
 
-        grid-template-columns: repeat(
-            auto-fill,
-            minmax(240px, 280px)
-        );
+       
+        
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+
 
         justify-content: start;
         justify-items: start;
@@ -3721,4 +3722,80 @@ img[src*="toronto-blue-jays"] {
     .mensaje-proximamente p {
         font-size: 15px;
     }
+}
+
+
+
+/* FILTROS MLB: SOLO EN MOVIL */
+
+/* ORDENADOR: OCULTAR FILTROS */
+@media (min-width: 768px) {
+    #vista-categoria-detalle:has(#mlb-pagina-equipo:not([hidden])) .mlb-catalogo-filtros {
+        display: none;
+    }
+
+    #vista-categoria-detalle:has(#mlb-pagina-equipo:not([hidden])) .mlb-catalogo-layout {
+        display: block;
+    }
+}
+
+/* MOVIL: MOSTRAR FILTROS */
+@media (max-width: 767px) {
+    #vista-categoria-detalle:has(#mlb-pagina-equipo:not([hidden])) .mlb-catalogo-filtros {
+        display: block;
+    }
+
+    #vista-categoria-detalle:has(#mlb-pagina-equipo:not([hidden])) .mlb-catalogo-layout {
+        display: block;
+    }
+}
+
+
+
+/* DISPONIBILIDAD EN LAS TARJETAS DE PRODUCTOS */
+
+.producto-card .producto-disponibilidad {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    width: fit-content;
+    padding: 8px 12px;
+    margin-top: 12px;
+    border-radius: 999px;
+    font-size: 13px;
+    font-weight: 700;
+    line-height: 1.4;
+}
+
+/* PUNTO CIRCULAR */
+
+.producto-card .producto-disponibilidad::before {
+    content: "";
+    display: block;
+    width: 9px;
+    height: 9px;
+    flex-shrink: 0;
+    border-radius: 50%;
+    background-color: currentColor;
+}
+
+/* DISPONIBLE */
+
+.producto-card .producto-disponibilidad.estado-disponible {
+    color: #15803d;
+    background-color: #dcfce7;
+}
+
+/* QUEDAN POCAS UNIDADES */
+
+.producto-card .producto-disponibilidad.estado-pocas {
+    color: #b45309;
+    background-color: #fef3c7;
+}
+
+/* NO DISPONIBLE */
+
+.producto-card .producto-disponibilidad.estado-agotado {
+    color: #be123c;
+    background-color: #ffe4e6;
 }
